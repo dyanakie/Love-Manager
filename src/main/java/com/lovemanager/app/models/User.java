@@ -18,5 +18,14 @@ public class User {
     @Column( name = "Password")
     String password;
 
+    @Column( name = "Level")
+    int level;
+
+    @Column( name = "StatId")
+    int statId;
+
+    @Column( name = "ItemId")
+    int itemId;
+
 
 }
