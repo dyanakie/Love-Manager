@@ -30,6 +30,7 @@ public class LoveManagerConsoleTest {
         session.close();
 
         System.out.println(all.get(0).getUsername());
+        System.out.println(all.get(0).getPassword());
 
     }
 

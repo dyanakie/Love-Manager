@@ -8,9 +8,19 @@
 </head>
 <body>
 <div class="header">
-    <img src="pics/playboymanager.jpg">
-</div>
+   <p><img src="pics/playboymanagerLogo.jpg"></p>
 
+</div>
+    <div class="employeeForm">
+                <h1>User:</h1>
+                <form action="#" th:action="@{/}" th:object="${user}" method="post">
+                <p>Username: <input type="text" th:field="*{username}" /></p>
+                <p>Password: <input type="text" th:field="*{password}" /></p>
+                <p><input type="submit" value="Login" /><input type="reset" value="Reset" /></p>
+                </form>
+                <p>If the user doesn't exist it will be created.</p>
+
+        </div>
 
 </body>
 </html>

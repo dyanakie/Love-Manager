@@ -10,4 +10,6 @@ public interface UserService {
 
     public List<User> getAll();
 
+    public void checkOrCreateUser(User user);
+
 }

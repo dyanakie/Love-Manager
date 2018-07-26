@@ -26,12 +26,36 @@ public class RepositorySql implements Repository {
             session.beginTransaction();
 
             theList = session.createQuery("from User").list();
-            System.out.println("asdadas");
-           // session.getTransaction().commit();
+
+            session.getTransaction().commit();
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
 
         return theList;
+    }
+
+    @Override
+    public User checkOrCreateUser(User user) {
+
+
+        return getAll().stream()
+                .filter(x -> x.getUsername().equals(user.getUsername()))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public void createUser(User user) {
+
+        try(Session session = factory.openSession()){
+            session.beginTransaction();
+            session.save(user);
+            session.getTransaction().commit();
+            System.out.println(user.getUsername() + " created Successfully");
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
     }
 }

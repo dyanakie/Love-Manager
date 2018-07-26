@@ -5,6 +5,27 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( name = "Id")
+    private int id;
+
+    @Column( name = "UserName")
+    private String username;
+
+    @Column( name = "Password")
+    private String password;
+
+    public User(){
+
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     public int getId() {
         return id;
     }
@@ -29,53 +50,6 @@ public class User {
         this.password = password;
     }
 
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public int getStatId() {
-        return statId;
-    }
-
-    public void setStatId(int statId) {
-        this.statId = statId;
-    }
-
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column( name = "ID")
-    int id;
-
-    @Column( name = "UserName")
-    String username;
-
-    @Column( name = "Password")
-    String password;
-
-    @Column( name = "Level")
-    int level;
-
-    @Column( name = "StatId")
-    int statId;
-
-    @Column( name = "ItemId")
-    int itemId;
-
-    public User(){
-
-    }
 
 
 }
