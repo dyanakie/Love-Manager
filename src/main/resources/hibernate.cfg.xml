@@ -14,7 +14,7 @@
         </property>
 
         <property name = "hibernate.connection.url">
-            jdbc:mysql://localhost:3306/LoveManager?createDatabaseIfNotExist=true
+            jdbc:mysql://localhost:3306/lovemanager
         </property>
 
         <property name = "hibernate.connection.username">
