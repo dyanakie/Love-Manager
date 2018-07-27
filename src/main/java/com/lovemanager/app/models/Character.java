@@ -17,6 +17,10 @@ public class Character {
     @Column(name = "statsId")
     private int statsId;
 
+    /*@OneToOne
+    @JoinColumn(name = "id", nullable = false)
+    private User user;*/
+
     public Character(){
 
     }

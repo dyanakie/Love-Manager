@@ -15,6 +15,7 @@ public class FactorySession {
         return new org.hibernate.cfg.Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Character.class)
                 .buildSessionFactory();
     }
 }

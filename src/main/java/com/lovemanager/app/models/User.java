@@ -17,6 +17,11 @@ public class User {
     @Column( name = "Password")
     private String password;
 
+    /*@OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "user")
+    private Character character;*/
+
     public User(){
 
     }

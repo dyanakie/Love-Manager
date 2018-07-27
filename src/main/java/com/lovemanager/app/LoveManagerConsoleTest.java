@@ -24,6 +24,7 @@ public class LoveManagerConsoleTest {
         session.beginTransaction();
 
         List<User> all = session.createQuery("from User").list();
+        List<User> all2 = session.createQuery("from Character").list();
 
         session.getTransaction().commit();
 
@@ -31,6 +32,8 @@ public class LoveManagerConsoleTest {
 
         System.out.println(all.get(0).getUsername());
         System.out.println(all.get(0).getPassword());
+
+        System.out.println(all2);
 
     }
 
