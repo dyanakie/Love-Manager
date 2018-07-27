@@ -1,6 +1,7 @@
 package com.lovemanager.app;
 
 import com.lovemanager.app.data.RepositorySql;
+import com.lovemanager.app.models.Character;
 import com.lovemanager.app.models.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,6 +18,7 @@ public class LoveManagerConsoleTest {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Character.class)
                 .buildSessionFactory();
 
         Session session = factory.openSession();
@@ -30,8 +32,8 @@ public class LoveManagerConsoleTest {
 
         session.close();
 
-        System.out.println(all.get(0).getUsername());
-        System.out.println(all.get(0).getPassword());
+        /*System.out.println(all.get(0).getUsername());
+        System.out.println(all.get(0).getPassword());*/
 
         System.out.println(all2);
 

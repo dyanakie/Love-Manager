@@ -8,19 +8,29 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column( name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column( name = "UserName")
+    @Column(name = "userName")
     private String username;
 
-    @Column( name = "Password")
+    @Column(name = "password")
     private String password;
 
-    /*@OneToOne(fetch = FetchType.LAZY,
+
+    @OneToOne(
+            fetch = FetchType.EAGER,
             cascade =  CascadeType.ALL,
             mappedBy = "user")
-    private Character character;*/
+    private Character character;
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
 
     public User(){
 
@@ -54,7 +64,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
 
 }

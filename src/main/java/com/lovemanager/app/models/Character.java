@@ -8,7 +8,7 @@ public class Character {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "characterId")
     private int id;
 
     @Column(name = "level")
@@ -17,9 +17,17 @@ public class Character {
     @Column(name = "statsId")
     private int statsId;
 
-    /*@OneToOne
-    @JoinColumn(name = "id", nullable = false)
-    private User user;*/
+    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "characterId", nullable = false)
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Character(){
 
@@ -53,4 +61,5 @@ public class Character {
     public void setStatsId(int statsId) {
         this.statsId = statsId;
     }
+
 }
