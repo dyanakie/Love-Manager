@@ -14,9 +14,6 @@ public class Character {
     @Column(name = "level")
     private int level;
 
-    @Column(name = "statsId")
-    private int statsId;
-
     @OneToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "characterId", nullable = false)
     private User user;
@@ -33,9 +30,9 @@ public class Character {
 
     }
 
-    public Character(int level, int statsId) {
+    public Character(int level) {
         this.level = level;
-        this.statsId = statsId;
+
     }
 
     public int getId() {
@@ -52,14 +49,6 @@ public class Character {
 
     public void setLevel(int level) {
         this.level = level;
-    }
-
-    public int getStatsId() {
-        return statsId;
-    }
-
-    public void setStatsId(int statsId) {
-        this.statsId = statsId;
     }
 
 }
