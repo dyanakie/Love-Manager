@@ -25,11 +25,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void checkOrCreateUser(User user) {
 
-        if(repository.checkOrCreateUser(user) == null){
+
+        if(repository.checkForUser(user) == null){
             repository.createUser(user);
+        }else{
+            user = repository.getUserByName(user.getUsername());
         }
 
-        repository.setActiveUser(user.getId(), user.getUsername());
+        repository.setActiveUser(user);
 
     }
 

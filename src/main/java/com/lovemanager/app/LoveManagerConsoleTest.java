@@ -28,10 +28,12 @@ public class LoveManagerConsoleTest {
 
         /*Active active = session.get(Active.class, 1);*/
 
-        List<Active> all = session.createQuery("from Active").list();
+     //   List<Active> all = session.createQuery("from Active").list();
 
       //  List<User> all = session.createQuery("from User").list();
       //  List<Character> all2 = session.createQuery("from Character").list();
+
+        User user = session.get(User.class, 15);
 
         session.getTransaction().commit();
 
@@ -46,7 +48,7 @@ public class LoveManagerConsoleTest {
         }*/
       //  System.out.println(all2);
 
-        System.out.println(all);
+        System.out.println(user.getId());
 
 
     }

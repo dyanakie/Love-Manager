@@ -10,13 +10,15 @@ public interface Repository {
 
     public List<User> getAll();
 
-    public User checkOrCreateUser(User user);
+    public User checkForUser(User user);
 
     public void createUser(User user);
 
     public List<Character> getAllCharacters();
 
-    public void setActiveUser(int id, String name);
+    public void setActiveUser(User user);
 
     public Active getActive();
+
+    public User getUserByName(String name);
 }

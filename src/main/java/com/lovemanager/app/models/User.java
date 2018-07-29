@@ -17,7 +17,11 @@ public class User {
     @Column(name = "password")
     private String password;
 
-   /* @OneToOne(fetch = FetchType.EAGER, optional = false)
+   /* @Column(name = "characterId")
+    private int characterId;*/
+
+
+    /* @OneToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id", nullable = false)
     private Character character;*/
 
@@ -76,6 +80,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
 
 }

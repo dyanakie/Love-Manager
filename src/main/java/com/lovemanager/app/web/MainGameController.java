@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class mainGameController {
+public class MainGameController {
 
     private UserService service;
 
     @Autowired
-    public mainGameController(UserService service){
+    public MainGameController(UserService service){
         this.service = service;
     }
 
