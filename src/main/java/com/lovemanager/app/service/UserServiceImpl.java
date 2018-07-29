@@ -1,5 +1,6 @@
 package com.lovemanager.app.service;
 
+import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,5 +29,12 @@ public class UserServiceImpl implements UserService {
             repository.createUser(user);
         }
 
+        repository.setActiveUser(user.getId(), user.getUsername());
+
+    }
+
+    @Override
+    public Active getActive() {
+        return repository.getActive();
     }
 }

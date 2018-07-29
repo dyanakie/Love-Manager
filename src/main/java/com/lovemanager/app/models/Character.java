@@ -14,17 +14,6 @@ public class Character {
     @Column(name = "level")
     private int level;
 
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "characterId", nullable = false)
-    private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Character(){
 

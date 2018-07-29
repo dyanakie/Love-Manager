@@ -1,6 +1,7 @@
 package com.lovemanager.app;
 
 import com.lovemanager.app.data.RepositorySql;
+import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.Character;
 import com.lovemanager.app.models.User;
 import org.hibernate.Session;
@@ -25,8 +26,12 @@ public class LoveManagerConsoleTest {
 
         session.beginTransaction();
 
-        List<User> all = session.createQuery("from User").list();
-        List<User> all2 = session.createQuery("from Character").list();
+        /*Active active = session.get(Active.class, 1);*/
+
+        List<Active> all = session.createQuery("from Active").list();
+
+      //  List<User> all = session.createQuery("from User").list();
+      //  List<Character> all2 = session.createQuery("from Character").list();
 
         session.getTransaction().commit();
 
@@ -35,7 +40,14 @@ public class LoveManagerConsoleTest {
         /*System.out.println(all.get(0).getUsername());
         System.out.println(all.get(0).getPassword());*/
 
-        System.out.println(all2);
+       /* for (User a:
+             all) {
+            System.out.println(a.getUsername());
+        }*/
+      //  System.out.println(all2);
+
+        System.out.println(all);
+
 
     }
 

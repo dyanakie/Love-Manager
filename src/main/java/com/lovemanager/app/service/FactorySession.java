@@ -1,5 +1,6 @@
 package com.lovemanager.app.service;
 
+import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.User;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +17,7 @@ public class FactorySession {
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Character.class)
+                .addAnnotatedClass(Active.class)
                 .buildSessionFactory();
     }
 }

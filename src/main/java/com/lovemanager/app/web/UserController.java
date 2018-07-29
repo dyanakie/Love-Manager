@@ -1,5 +1,6 @@
 package com.lovemanager.app.web;
 
+import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.User;
 import com.lovemanager.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +43,12 @@ public class UserController {
 
         service.checkOrCreateUser(user);
 
+        modelAndView.addObject("active", service.getActive());
+
         return modelAndView;
     }
+
+
 
 
 }

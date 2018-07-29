@@ -28,6 +28,7 @@
 
         <mapping class="com.lovemanager.app.models.Character" />
         <mapping class="com.lovemanager.app.models.User" />
+        <mapping class="com.lovemanager.app.models.Active" />
 
     </session-factory>
 </hibernate-configuration>

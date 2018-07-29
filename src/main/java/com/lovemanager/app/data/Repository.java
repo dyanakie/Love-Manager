@@ -1,5 +1,6 @@
 package com.lovemanager.app.data;
 
+import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.Character;
 import com.lovemanager.app.models.User;
 
@@ -14,4 +15,8 @@ public interface Repository {
     public void createUser(User user);
 
     public List<Character> getAllCharacters();
+
+    public void setActiveUser(int id, String name);
+
+    public Active getActive();
 }

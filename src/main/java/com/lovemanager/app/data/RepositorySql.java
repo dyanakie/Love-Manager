@@ -1,5 +1,6 @@
 package com.lovemanager.app.data;
 
+import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.Character;
 import com.lovemanager.app.models.User;
 import org.hibernate.Session;
@@ -51,6 +52,41 @@ public class RepositorySql implements Repository {
         }
 
         return theList;
+    }
+
+    @Override
+    public void setActiveUser(int id, String name) {
+
+        try(Session session = factory.openSession()){
+            session.beginTransaction();
+            Active current = getActive();
+
+            current.setActiveUser(id);
+            current.setName(name);
+            session.update(current);
+            session.save(current);
+            session.getTransaction().commit();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public Active getActive() {
+
+        Active current = new Active();
+
+        try(Session session = factory.openSession()){
+            session.beginTransaction();
+            current = session.get(Active.class, 1);
+
+            session.getTransaction().commit();
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        return current;
     }
 
     @Override
