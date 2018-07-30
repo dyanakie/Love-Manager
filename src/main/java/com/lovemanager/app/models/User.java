@@ -17,6 +17,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
+
    /* @Column(name = "characterId")
     private int characterId;*/
 
@@ -80,7 +81,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 
 }

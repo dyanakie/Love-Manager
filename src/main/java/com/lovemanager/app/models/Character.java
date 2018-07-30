@@ -3,7 +3,7 @@ package com.lovemanager.app.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "character")
+@Table(name = "\"character\"")
 public class Character {
 
     @Id
@@ -13,6 +13,9 @@ public class Character {
 
     @Column(name = "level")
     private int level;
+
+    @Column(name = "userId")      // temporarily before mapping issue fixed
+    private int userId;
 
     @Column(name = "knowledge")
     private int knowledge;
@@ -32,11 +35,19 @@ public class Character {
     @Column(name = "accessories")
     private  String accessories;
 
+    @Column(name = "itemsOwnedId")
+    private int itemsOwnedId;
+
+
+   /* @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "characterId", nullable = false)
+    private Active active;*/
+
     public Character(){
 
     }
 
-    public Character(int level, int knowledge, int intelligence, int physique, String vehicle, String outfit, String accessories) {
+    public Character(int level, int knowledge, int intelligence, int physique, int itemsOwnedId, String vehicle, String outfit, String accessories) {
         this.level = level;
         this.knowledge = knowledge;
         this.intelligence = intelligence;
@@ -44,6 +55,7 @@ public class Character {
         this.vehicle = vehicle;
         this.outfit = outfit;
         this.accessories = accessories;
+        this.itemsOwnedId = itemsOwnedId;
     }
 
     public int getId() {
@@ -108,5 +120,21 @@ public class Character {
 
     public void setAccessories(String accessories) {
         this.accessories = accessories;
+    }
+
+    public int getItemsOwnedId() {
+        return itemsOwnedId;
+    }
+
+    public void setItemsOwnedId(int itemsOwnedId) {
+        this.itemsOwnedId = itemsOwnedId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

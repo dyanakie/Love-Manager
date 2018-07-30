@@ -136,5 +136,23 @@ public class RepositorySql implements Repository {
 
     }
 
+    @Override
+    public void createCharacter(User user){
+
+        Character newCharacter = new Character();
+        newCharacter.setUserId(user.getId());
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+            session.save(newCharacter);
+            session.getTransaction().commit();
+            System.out.println(newCharacter.getUserId() + " character id created succesfully");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+
+        }
+
+    }
+
 
 }

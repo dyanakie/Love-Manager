@@ -2,8 +2,7 @@ package com.lovemanager.app.service;
 
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import com.lovemanager.app.service.base.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +24,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void checkOrCreateUser(User user) {
 
-
         if(repository.checkForUser(user) == null){
             repository.createUser(user);
         }else{
@@ -33,6 +31,7 @@ public class UserServiceImpl implements UserService {
         }
 
         repository.setActiveUser(user);
+        repository.createCharacter(user);
 
     }
 

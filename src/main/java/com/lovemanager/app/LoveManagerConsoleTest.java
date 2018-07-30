@@ -26,29 +26,17 @@ public class LoveManagerConsoleTest {
 
         session.beginTransaction();
 
-        /*Active active = session.get(Active.class, 1);*/
+        Character newChar = new Character();
 
-     //   List<Active> all = session.createQuery("from Active").list();
+        session.save(newChar);
 
-      //  List<User> all = session.createQuery("from User").list();
-      //  List<Character> all2 = session.createQuery("from Character").list();
-
-        User user = session.get(User.class, 15);
+     //   User user = session.get(User.class, 15);
 
         session.getTransaction().commit();
 
         session.close();
 
-        /*System.out.println(all.get(0).getUsername());
-        System.out.println(all.get(0).getPassword());*/
-
-       /* for (User a:
-             all) {
-            System.out.println(a.getUsername());
-        }*/
-      //  System.out.println(all2);
-
-        System.out.println(user.getId());
+      //  System.out.println(all);
 
 
     }

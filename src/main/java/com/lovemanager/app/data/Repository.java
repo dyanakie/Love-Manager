@@ -21,4 +21,6 @@ public interface Repository {
     public Active getActive();
 
     public User getUserByName(String name);
+
+    public void createCharacter(User user);
 }

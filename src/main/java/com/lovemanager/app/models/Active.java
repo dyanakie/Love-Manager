@@ -17,6 +17,20 @@ public class Active {
     @Column(name = "name")
     private String name;
 
+    /*@OneToOne(
+            fetch = FetchType.EAGER,
+            cascade =  CascadeType.ALL,
+            mappedBy = "active")
+    private Character character;
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }*/
+
     public Active(){
 
     }
