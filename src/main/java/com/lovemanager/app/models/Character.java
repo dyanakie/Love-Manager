@@ -18,8 +18,8 @@ public class Character {
     @Column(name = "userId")      // temporarily before mapping issue fixed
     private int userId;
 
-    @Column(name = "knowledge")
-    private int knowledge;
+    @Column(name = "status")
+    private int status;
 
     @Column(name = "intelligence")
     private  int intelligence;
@@ -44,9 +44,9 @@ public class Character {
 
     }
 
-    public Character(int level, int knowledge, int intelligence, int physique, int itemsOwnedId, String vehicle, String outfit, String accessories) {
+    public Character(int level, int status, int intelligence, int physique, int itemsOwnedId, String vehicle, String outfit, String accessories) {
         this.level = level;
-        this.knowledge = knowledge;
+        this.status = status;
         this.intelligence = intelligence;
         this.physique = physique;
         this.vehicle = vehicle;
@@ -71,12 +71,12 @@ public class Character {
         this.level = level;
     }
 
-    public int getKnowledge() {
-        return knowledge;
+    public int getStatus() {
+        return status;
     }
 
-    public void setKnowledge(int knowledge) {
-        this.knowledge = knowledge;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public int getIntelligence() {
