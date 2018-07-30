@@ -20,7 +20,6 @@ public class User {
     @Column(name = "characterId")
     private int characterId;
 
-
     public User(){
 
     }

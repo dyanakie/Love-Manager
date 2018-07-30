@@ -20,7 +20,6 @@ public class Active {
     @Column(name = "characterId")
     private int characterId;
 
-
     public Active(){
 
     }

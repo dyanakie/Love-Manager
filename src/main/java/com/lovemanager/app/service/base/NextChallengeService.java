@@ -4,11 +4,11 @@ import com.lovemanager.app.models.Girl;
 
 public interface NextChallengeService {
 
-    public Girl getNextGirl(int level);
+    Girl getNextGirl(int level);
 
-    public String getRandomType();
+    String getRandomType();
 
-    public int getRandomLevel(int level);
+    int getRandomLevel(int level);
 
-    public String[] getUrlPresentationName();
+    String[] getUrlPresentationName();
 }

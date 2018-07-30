@@ -13,9 +13,9 @@
 </div>
 <hr>
 <div style="text-align: center">
-<img src="pics/girls/test.jpg" height="420px">
-<p>Lonnie</p>
-<p>A library girl bla bla bla</p>
+<img  th:src="@{${girl.getPicUrl()}}" height="420px">
+<p th:text="${girl.getName()}"></p>
+<p th:text="${girl.getPresentation()}"></p>
 </div>
 
 

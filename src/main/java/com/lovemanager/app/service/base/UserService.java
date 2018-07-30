@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface UserService {
 
-    public List<User> getAll();
+    List<User> getAll();
 
-    public void checkOrCreateUser(User user);
+    void checkOrCreateUser(User user);
 
-    public Active getActive();
+    Active getActive();
 
 }

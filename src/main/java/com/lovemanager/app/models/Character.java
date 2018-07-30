@@ -38,7 +38,7 @@ public class Character {
 
     @Column(name = "itemsOwnedId")
     private int itemsOwnedId;
-
+    
 
     public Character(){
 
