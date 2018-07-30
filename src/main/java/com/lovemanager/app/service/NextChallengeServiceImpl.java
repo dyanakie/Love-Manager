@@ -20,7 +20,7 @@ public class NextChallengeServiceImpl implements NextChallengeService {
     }
 
     @Override
-    public Girl getNextGirl(int level) {
+    public Girl getNextGirl(int level) {                             // returns girl generated according to current level
 
         String type = getRandomType();
         int girlLevel = getRandomLevel(level);
