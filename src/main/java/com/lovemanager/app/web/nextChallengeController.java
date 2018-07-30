@@ -16,7 +16,6 @@ public class nextChallengeController {
         //logic
 
 
-        return new ModelAndView("redirect:/mainGameScreen", model);
+        return new ModelAndView("nextChallenge", model);
     }
-
 }
