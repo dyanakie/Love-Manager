@@ -20,15 +20,13 @@ public class LoveManagerConsoleTest {
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Character.class)
+                .addAnnotatedClass(Active.class)
                 .buildSessionFactory();
 
         Session session = factory.openSession();
 
         session.beginTransaction();
 
-        Character newChar = new Character();
-
-        session.save(newChar);
 
      //   User user = session.get(User.class, 15);
 
@@ -36,7 +34,7 @@ public class LoveManagerConsoleTest {
 
         session.close();
 
-      //  System.out.println(all);
+       // System.out.println(newChar.getUserId());
 
 
     }

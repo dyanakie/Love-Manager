@@ -17,37 +17,8 @@ public class User {
     @Column(name = "password")
     private String password;
 
-
-   /* @Column(name = "characterId")
-    private int characterId;*/
-
-
-    /* @OneToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "id", nullable = false)
-    private Character character;*/
-
-    /*public Character getCharacter() {
-        return character;
-    }
-
-    public void setCharacter(Character character) {
-        this.character = character;
-    }*/
-
-
-   /* @OneToOne(
-            fetch = FetchType.EAGER,
-            cascade =  CascadeType.ALL,
-            mappedBy = "user")
-    private Character character;
-
-    public Character getCharacter() {
-        return character;
-    }
-
-    public void setCharacter(Character character) {
-        this.character = character;
-    }*/
+    @Column(name = "characterId")
+    private int characterId;
 
     public User(){
 
@@ -82,4 +53,11 @@ public class User {
         this.password = password;
     }
 
+    public int getCharacterId() {
+        return characterId;
+    }
+
+    public void setCharacterId(int characterId) {
+        this.characterId = characterId;
+    }
 }

@@ -31,7 +31,10 @@ public class UserServiceImpl implements UserService {
         }
 
         repository.setActiveUser(user);
+
         repository.createCharacter(user);
+
+        repository.saveCharacterIdForUser(user);
 
     }
 

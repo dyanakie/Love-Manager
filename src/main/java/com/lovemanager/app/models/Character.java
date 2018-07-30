@@ -39,10 +39,6 @@ public class Character {
     private int itemsOwnedId;
 
 
-   /* @OneToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "characterId", nullable = false)
-    private Active active;*/
-
     public Character(){
 
     }

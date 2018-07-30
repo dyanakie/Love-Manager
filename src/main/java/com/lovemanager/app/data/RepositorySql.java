@@ -64,10 +64,8 @@ public class RepositorySql implements Repository {
             Active current = getActive();
 
             current.setActiveUser(user.getId());
-            session.update(current);
             current.setName(user.getUsername());
             session.update(current);
-            session.save(current);
             session.getTransaction().commit();
 
         }catch(Exception e){
@@ -149,7 +147,27 @@ public class RepositorySql implements Repository {
             System.out.println(newCharacter.getUserId() + " character id created succesfully");
         }catch (Exception e){
             System.out.println(e.getMessage());
+        }
 
+    }
+
+    @Override
+    public void saveCharacterIdForUser(User user) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+            Character character = getAllCharacters().stream()
+                                        .filter( x -> x.getUserId() == user.getId())
+                                        .findFirst()
+                                        .orElse(null);
+
+            user.setCharacterId(character.getId());
+
+            session.update(user);
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
 
     }

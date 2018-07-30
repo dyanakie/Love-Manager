@@ -23,4 +23,7 @@ public interface Repository {
     public User getUserByName(String name);
 
     public void createCharacter(User user);
+
+    public void saveCharacterIdForUser(User user);
+
 }
