@@ -20,6 +20,7 @@ public class User {
     @Column(name = "characterId")
     private int characterId;
 
+
     public User(){
 
     }
@@ -60,4 +61,5 @@ public class User {
     public void setCharacterId(int characterId) {
         this.characterId = characterId;
     }
+
 }

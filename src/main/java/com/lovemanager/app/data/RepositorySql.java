@@ -167,6 +167,11 @@ public class RepositorySql implements Repository {
             user.setCharacterId(character.getId());
 
             session.update(user);
+
+            Active active = session.get(Active.class, 1);
+            active.setCharacterId(character.getId());
+
+            session.update(active);
             session.getTransaction().commit();
 
         }catch (Exception e){

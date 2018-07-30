@@ -53,4 +53,12 @@ public class Active {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getCharacterId() {
+        return characterId;
+    }
+
+    public void setCharacterId(int characterId) {
+        this.characterId = characterId;
+    }
 }

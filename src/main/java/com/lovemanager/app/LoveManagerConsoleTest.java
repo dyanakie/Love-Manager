@@ -30,7 +30,7 @@ public class LoveManagerConsoleTest {
 
         Character thisCharacter = session.get(Character.class, 18);
 
-        System.out.println(thisCharacter.getUser().getId());
+
 
         session.getTransaction().commit();
 
