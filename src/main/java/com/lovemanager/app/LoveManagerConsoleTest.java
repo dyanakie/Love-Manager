@@ -28,13 +28,15 @@ public class LoveManagerConsoleTest {
         session.beginTransaction();
 
 
-     //   User user = session.get(User.class, 15);
+        Character thisCharacter = session.get(Character.class, 18);
+
+        System.out.println(thisCharacter.getUser().getId());
 
         session.getTransaction().commit();
 
         session.close();
 
-       // System.out.println(newChar.getUserId());
+
 
 
     }

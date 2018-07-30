@@ -11,26 +11,29 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping data for table lovemanager.active: ~1 rows (approximately)
+-- Dumping data for table lovemanager.active: ~0 rows (approximately)
 DELETE FROM `active`;
 /*!40000 ALTER TABLE `active` DISABLE KEYS */;
-INSERT INTO `active` (`id`, `activeId`, `name`) VALUES
-	(1, 2, 'bache Kiko');
+INSERT INTO `active` (`id`, `activeId`, `name`, `characterId`) VALUES
+	(1, 16, 'palermo', 0);
 /*!40000 ALTER TABLE `active` ENABLE KEYS */;
 
--- Dumping data for table lovemanager.character: ~0 rows (approximately)
+-- Dumping data for table lovemanager.character: ~2 rows (approximately)
 DELETE FROM `character`;
 /*!40000 ALTER TABLE `character` DISABLE KEYS */;
 INSERT INTO `character` (`characterId`, `level`, `userId`, `knowledge`, `intelligence`, `physique`, `vehicle`, `outfit`, `accessories`, `itemsOwnedId`) VALUES
-	(1, 0, 2, 0, 0, 0, NULL, NULL, NULL, '0');
+	(17, 0, 14, 0, 0, 0, NULL, NULL, NULL, '0'),
+	(18, 0, 15, 0, 0, 0, NULL, NULL, NULL, '0'),
+	(19, 0, 16, 0, 0, 0, NULL, NULL, NULL, '0');
 /*!40000 ALTER TABLE `character` ENABLE KEYS */;
 
--- Dumping data for table lovemanager.user: ~1 rows (approximately)
+-- Dumping data for table lovemanager.user: ~2 rows (approximately)
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `userName`, `password`, `characterId`) VALUES
-	(1, 'drago', '123', NULL),
-	(2, 'bache Kiko', '123', NULL);
+	(14, 'caesar', '123', 17),
+	(15, 'mohamed', '123', 18),
+	(16, 'palermo', '123', 19);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -71,6 +71,8 @@ public class RepositorySql implements Repository {
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+
+        System.out.println("set active User - Success");
     }
 
     @Override
@@ -148,6 +150,7 @@ public class RepositorySql implements Repository {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
 
     }
 
