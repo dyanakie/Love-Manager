@@ -27,6 +27,8 @@ public class MainGameController {
 
         modelAndView.addObject(service.getActive());
 
+        modelAndView.addObject("character", characterService.getCharacterById(service.getActive().getCharacterId()));
+
 
         return modelAndView;
 

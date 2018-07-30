@@ -19,9 +19,9 @@
 
       <div style="float: right; margin-right: 50px; font-family: 'Comic Sans MS'">
         <h2>APPEARANCE</h2>
-        <p>PHYSIQUE:     </p>
-        <p>INTELLIGENCE: </p>
-        <p>KNOWLEDGE:    </p>
+        <p th:text="'Physique:      ' + ${character.getPhysique()}"></p>
+        <p th:text="'Intelligence:  ' + ${character.getIntelligence()}"></p>
+        <p th:text="'Knowledge:     ' + ${character.getKnowledge()}"></p>
 
       </div>
 

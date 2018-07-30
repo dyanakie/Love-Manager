@@ -8,22 +8,24 @@ import java.util.List;
 
 public interface Repository {
 
-    public List<User> getAll();
+    List<User> getAll();
 
-    public User checkForUser(User user);
+    User checkForUser(User user);
 
-    public void createUser(User user);
+    void createUser(User user);
 
-    public List<Character> getAllCharacters();
+    List<Character> getAllCharacters();
 
-    public void setActiveUser(User user);
+    void setActiveUser(User user);
 
-    public Active getActive();
+    Active getActive();
 
-    public User getUserByName(String name);
+    User getUserByName(String name);
 
-    public void createCharacter(User user);
+    void createCharacter(User user);
 
-    public void saveCharacterIdForUser(User user);
+    void saveCharacterIdForUser(User user);
+
+    Character getCharacterById(int id);
 
 }

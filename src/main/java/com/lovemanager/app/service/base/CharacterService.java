@@ -1,11 +1,10 @@
 package com.lovemanager.app.service.base;
 
+import com.lovemanager.app.models.Character;
+
 public interface CharacterService {
 
-    public int getIntelligence();
+    public Character getCharacterById(int id);
 
-    public int getPhysique();
-
-    public int getKnowledge();
 
 }

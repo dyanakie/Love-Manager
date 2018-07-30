@@ -1,6 +1,7 @@
 package com.lovemanager.app.service;
 
 import com.lovemanager.app.data.Repository;
+import com.lovemanager.app.models.Character;
 import com.lovemanager.app.service.base.CharacterService;
 import org.springframework.stereotype.Service;
 
@@ -14,17 +15,8 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     @Override
-    public int getIntelligence() {
-        return 0;
+    public Character getCharacterById(int id) {
+        return repository.getCharacterById(id);
     }
 
-    @Override
-    public int getPhysique() {
-        return 0;
-    }
-
-    @Override
-    public int getKnowledge() {
-        return 0;
-    }
 }

@@ -142,6 +142,16 @@ public class RepositorySql implements Repository {
         Character newCharacter = new Character();
         newCharacter.setUserId(user.getId());
 
+        List<Character> allCharacters = getAllCharacters();
+
+        if(allCharacters.stream()
+                .filter(x -> x.getUserId() == user.getId())
+                .findFirst()
+                .orElse(null) != null){
+            System.out.println("Character found");
+            return;
+        }
+
         try(Session session = factory.openSession()) {
             session.beginTransaction();
             session.save(newCharacter);
@@ -178,6 +188,32 @@ public class RepositorySql implements Repository {
             System.out.println(e.getMessage());
         }
 
+    }
+
+    @Override
+    public Character getCharacterById(int id) {
+
+        System.out.println("ID: " + id);
+
+        Character newCharacter = new Character();
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            newCharacter = getAllCharacters().stream()
+                    .filter(x -> x.getId() == id)
+                    .findFirst()
+                    .orElse(null);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Intelligence: " + newCharacter.getIntelligence());
+
+        return newCharacter;
     }
 
 
