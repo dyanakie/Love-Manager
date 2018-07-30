@@ -1,13 +1,23 @@
 package com.lovemanager.app.service;
 
+import com.lovemanager.app.data.Repository;
 import com.lovemanager.app.models.Girl;
 import com.lovemanager.app.service.base.NextChallengeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
+@Service
 public class NextChallengeServiceImpl implements NextChallengeService {
 
     public final Random RANDOM = new Random();
+    private Repository repository;
+
+    @Autowired
+    public NextChallengeServiceImpl(Repository repository){
+        this.repository = repository;
+    }
 
     @Override
     public Girl getNextGirl(int level) {

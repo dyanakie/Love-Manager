@@ -3,6 +3,7 @@ package com.lovemanager.app.service;
 import com.lovemanager.app.data.Repository;
 import com.lovemanager.app.models.Character;
 import com.lovemanager.app.service.base.CharacterService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,6 +11,7 @@ public class CharacterServiceImpl implements CharacterService {
 
     private Repository repository;
 
+    @Autowired
     public CharacterServiceImpl(Repository repository){
         this.repository = repository;
     }

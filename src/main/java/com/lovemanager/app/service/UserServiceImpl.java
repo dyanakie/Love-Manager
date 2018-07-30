@@ -3,6 +3,7 @@ package com.lovemanager.app.service;
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.User;
 import com.lovemanager.app.service.base.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class UserServiceImpl implements UserService {
 
     private com.lovemanager.app.data.Repository repository;
 
+    @Autowired
     public UserServiceImpl(com.lovemanager.app.data.Repository repository){
         this.repository = repository;
     }
