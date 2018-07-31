@@ -1,5 +1,7 @@
 package com.lovemanager.app.service;
 
+import com.lovemanager.app.data.base.CharacterRepository;
+import com.lovemanager.app.data.base.UserRepository;
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.User;
 import com.lovemanager.app.service.base.UserService;
@@ -11,37 +13,39 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private com.lovemanager.app.data.Repository repository;
+    private UserRepository userRepository;
+    private CharacterRepository characterRepository;
 
     @Autowired
-    public UserServiceImpl(com.lovemanager.app.data.Repository repository){
-        this.repository = repository;
+    public UserServiceImpl(UserRepository userRepository, CharacterRepository characterRepository){
+        this.userRepository = userRepository;
+        this.characterRepository = characterRepository;
     }
 
     @Override
     public List<User> getAll() {
-        return repository.getAll();
+        return userRepository.getAll();
     }
 
     @Override
     public void checkOrCreateUser(User user) {
 
-        if(repository.checkForUser(user) == null){
-            repository.createUser(user);
+        if(userRepository.checkForUser(user) == null){
+            userRepository.createUser(user);
         }else{
-            user = repository.getUserByName(user.getUsername());
+            user = userRepository.getUserByName(user.getUsername());
         }
 
-        repository.setActiveUser(user);
+        userRepository.setActiveUser(user);
 
-        repository.createCharacter(user);
+        characterRepository.createCharacter(user);
 
-        repository.saveCharacterIdForUser(user);
+        characterRepository.saveCharacterIdForUser(user);
 
     }
 
     @Override
     public Active getActive() {
-        return repository.getActive();
+        return userRepository.getActive();
     }
 }

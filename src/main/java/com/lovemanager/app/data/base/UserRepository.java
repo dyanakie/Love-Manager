@@ -1,4 +1,4 @@
-package com.lovemanager.app.data;
+package com.lovemanager.app.data.base;
 
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.Character;
@@ -6,7 +6,7 @@ import com.lovemanager.app.models.User;
 
 import java.util.List;
 
-public interface Repository {
+public interface UserRepository {
 
     List<User> getAll();
 
@@ -14,18 +14,16 @@ public interface Repository {
 
     void createUser(User user);
 
-    List<Character> getAllCharacters();
-
     void setActiveUser(User user);
 
     Active getActive();
 
     User getUserByName(String name);
 
-    void createCharacter(User user);
+   /* void createCharacter(User user);
 
     void saveCharacterIdForUser(User user);
 
-    Character getCharacterById(int id);
+    Character getCharacterById(int id);*/
 
 }

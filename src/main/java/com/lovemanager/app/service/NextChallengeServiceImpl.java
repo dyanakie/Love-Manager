@@ -1,6 +1,6 @@
 package com.lovemanager.app.service;
 
-import com.lovemanager.app.data.Repository;
+import com.lovemanager.app.data.base.UserRepository;
 import com.lovemanager.app.models.Girl;
 import com.lovemanager.app.service.base.NextChallengeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,11 @@ import java.util.Random;
 public class NextChallengeServiceImpl implements NextChallengeService {
 
     public final Random RANDOM = new Random();
-    private Repository repository;
+    private UserRepository userRepository;
 
     @Autowired
-    public NextChallengeServiceImpl(Repository repository){
-        this.repository = repository;
+    public NextChallengeServiceImpl(UserRepository userRepository){
+        this.userRepository = userRepository;
     }
 
     @Override
