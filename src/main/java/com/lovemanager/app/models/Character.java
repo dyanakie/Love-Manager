@@ -38,7 +38,6 @@ public class Character {
 
     @Column(name = "itemsOwnedId")
     private int itemsOwnedId;
-    
 
     public Character(){
 
@@ -133,6 +132,24 @@ public class Character {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getTitle(){
+
+        switch (getLevel()){
+
+            case 0: return  "Grand Looser";
+            case 1: return  "Looser";
+            case 2: return  "Awkard Playboy";
+            case 3: return  "Novice Playboy";
+            case 4: return  "Decent Playboy";
+            case 5: return  "Slick Player";
+            case 6: return  "Grandmaster of the Game";
+
+        }
+
+        return "error";
+
     }
 
 }

@@ -18,6 +18,8 @@
 <img src="pics/characterWhole.jpg">
 
       <div style="float: right; margin-right: 50px; font-family: 'Comic Sans MS'">
+        <p th:text="'Level ' + ${character.getLevel()}"></p>
+        <p th:text="'Title: ' + ${character.getTitle()}"></p>
         <h2>APPEARANCE</h2>
         <p th:text="'Physique:      ' + ${character.getPhysique()}"></p>
         <p th:text="'Intelligence:  ' + ${character.getIntelligence()}"></p>
