@@ -19,4 +19,6 @@ public interface CharacterRepository {
     void saveGirl(Girl girl);
 
     Girl getActiveGirl();
+
+    void levelUp(int characterId);
 }

@@ -5,7 +5,7 @@ import com.lovemanager.app.models.basic.FlirtResult;
 
 public interface ChallengeResultService {
 
-    FlirtResult calculateResult(Girl girl, String flirtType);
+    FlirtResult calculateResult(String flirtType);
 
 
 

@@ -3,10 +3,7 @@ package com.lovemanager.app.web;
 
 import com.lovemanager.app.models.Girl;
 import com.lovemanager.app.models.basic.FlirtResult;
-import com.lovemanager.app.service.base.CharacterService;
-import com.lovemanager.app.service.base.GirlService;
-import com.lovemanager.app.service.base.NextChallengeService;
-import com.lovemanager.app.service.base.UserService;
+import com.lovemanager.app.service.base.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,13 +19,15 @@ public class NextChallengeController {
     private UserService service;
     private CharacterService characterService;
     private GirlService girlService;
+    private ChallengeResultService challengeResultService;
 
     @Autowired
-    public NextChallengeController(NextChallengeService nextChallengeService, UserService service, CharacterService characterService, GirlService girlService){
+    public NextChallengeController(NextChallengeService nextChallengeService, UserService service, CharacterService characterService, GirlService girlService, ChallengeResultService challengeResultService){
         this.nextChallengeService = nextChallengeService;
         this.characterService = characterService;
         this.service = service;
         this.girlService = girlService;
+        this.challengeResultService = challengeResultService;
     }
 
     @GetMapping("/nextChallenge")
@@ -56,13 +55,11 @@ public class NextChallengeController {
     @GetMapping("/intelligenceFlirt")
     public ModelAndView intelligenceFlirt(ModelAndView modelAndView){
 
-        //logic
-
         modelAndView.setViewName("flirtResult");
 
         modelAndView.addObject(service.getActive());
 
-        modelAndView.addObject("flirtResult", new FlirtResult("bla bla bla", false));            // testing
+        modelAndView.addObject("flirtResult", challengeResultService.calculateResult("intelligence"));            // testing
 
         return modelAndView;
 
@@ -77,7 +74,7 @@ public class NextChallengeController {
 
         modelAndView.addObject(service.getActive());
 
-        modelAndView.addObject("flirtResult", new FlirtResult("bla bla bla", false));            // testing
+        modelAndView.addObject("flirtResult", challengeResultService.calculateResult("physical"));            // testing
 
         return modelAndView;
 
@@ -90,7 +87,7 @@ public class NextChallengeController {
 
         modelAndView.addObject(service.getActive());
 
-        modelAndView.addObject("flirtResult", new FlirtResult("bla bla bla", true));            // testing
+        modelAndView.addObject("flirtResult", challengeResultService.calculateResult("status"));            // testing
 
         return modelAndView;
 
