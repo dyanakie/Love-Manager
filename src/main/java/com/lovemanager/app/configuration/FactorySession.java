@@ -1,4 +1,4 @@
-package com.lovemanager.app.service;
+package com.lovemanager.app.configuration;
 
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.User;
