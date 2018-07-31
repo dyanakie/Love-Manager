@@ -6,5 +6,6 @@ public interface CharacterService {
 
      Character getCharacterById(int id);
 
+     void createCharacter();
 
 }

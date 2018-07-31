@@ -74,7 +74,7 @@ public class NextChallengeController {
 
         modelAndView.addObject(service.getActive());
 
-        modelAndView.addObject("flirtResult", challengeResultService.calculateResult("physical"));            // testing
+        modelAndView.addObject("flirtResult", challengeResultService.calculateResult("physique"));            // testing
 
         return modelAndView;
 

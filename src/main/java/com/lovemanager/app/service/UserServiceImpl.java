@@ -38,10 +38,6 @@ public class UserServiceImpl implements UserService {
 
         userRepository.setActiveUser(user);
 
-        characterRepository.createCharacter(user);
-
-        characterRepository.saveCharacterIdForUser(user);
-
     }
 
     @Override

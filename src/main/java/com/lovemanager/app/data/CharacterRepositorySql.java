@@ -187,4 +187,22 @@ public class CharacterRepositorySql implements CharacterRepository {
 
     }
 
+    @Override
+    public void deleteActiveCharacter(int characterId) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            Character character = session.get(Character.class,characterId);
+
+            session.delete(character);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
 }

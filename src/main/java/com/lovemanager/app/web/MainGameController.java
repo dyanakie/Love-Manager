@@ -25,6 +25,8 @@ public class MainGameController {
 
         ModelAndView modelAndView = new ModelAndView("mainGameScreen");
 
+        characterService.createCharacter();
+
         modelAndView.addObject(service.getActive());
 
         modelAndView.addObject("character", characterService.getCharacterById(service.getActive().getCharacterId()));

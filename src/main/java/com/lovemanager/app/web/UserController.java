@@ -1,6 +1,7 @@
 package com.lovemanager.app.web;
 
 import com.lovemanager.app.models.User;
+import com.lovemanager.app.service.base.CharacterService;
 import com.lovemanager.app.service.base.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 
     private UserService service;
+    private CharacterService characterService;
 
     @Autowired
-    public UserController(UserService service){
+    public UserController(UserService service, CharacterService characterService) {
         this.service = service;
+        this.characterService = characterService;
     }
 
     @GetMapping("/")
@@ -48,6 +51,8 @@ public class UserController {
     public ModelAndView redirectPage(){
 
         ModelAndView modelAndView = new ModelAndView("index2");
+
+
 
         modelAndView.addObject("active", service.getActive());
 

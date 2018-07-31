@@ -21,4 +21,6 @@ public interface CharacterRepository {
     Girl getActiveGirl();
 
     void levelUp(int characterId);
+
+    void deleteActiveCharacter(int characterId);
 }

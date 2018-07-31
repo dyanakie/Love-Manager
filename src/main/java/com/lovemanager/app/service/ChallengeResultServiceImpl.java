@@ -35,6 +35,8 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
             return new FlirtResult("She cannot witstand your great charm and quickly falls into your arms", true);
         }
 
+
+        characterRepository.deleteActiveCharacter(userRepository.getActive().getCharacterId());
         return new FlirtResult("Failure", false);
     }
 }
