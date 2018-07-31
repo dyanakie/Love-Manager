@@ -33,6 +33,8 @@ public class NextChallengeController {
 
         ModelAndView modelAndView = new ModelAndView("nextChallenge");
 
+        modelAndView.addObject(service.getActive());
+
         Girl newGirl = nextChallengeService.getNextGirl(characterService.getCharacterById(service.getActive().getCharacterId()).getLevel());
 
         System.out.println("level: " + newGirl.getLevel());
