@@ -5,6 +5,8 @@ public class FlirtResult {
     private String resultPicUrl;
     private String resultText;
     private boolean result;
+    private String buttonUrl;
+    private String link;
 
     public FlirtResult(String resultText, Boolean result){
         this.result = result;
@@ -12,8 +14,12 @@ public class FlirtResult {
 
         if(result){
             resultPicUrl = "pics/buttons/flirtSuccessful.png";
+            buttonUrl = "pics/buttons/next";
+            link = "/mainGameScreen";
         }else{
             resultPicUrl = "pics/buttons/flirtFails.png";
+            buttonUrl = "pics/newGame";
+            link = "/index2";
         }
 
     }
@@ -32,5 +38,29 @@ public class FlirtResult {
 
     public void setResultText(String resultText) {
         this.resultText = resultText;
+    }
+
+    public boolean isResult() {
+        return result;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
+    }
+
+    public String getButtonUrl() {
+        return buttonUrl;
+    }
+
+    public void setButtonUrl(String buttonUrl) {
+        this.buttonUrl = buttonUrl;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

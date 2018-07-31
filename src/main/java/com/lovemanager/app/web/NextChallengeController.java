@@ -87,7 +87,7 @@ public class NextChallengeController {
 
         modelAndView.addObject(service.getActive());
 
-        modelAndView.addObject("flirtResult", new FlirtResult("bla bla bla", false));            // testing
+        modelAndView.addObject("flirtResult", new FlirtResult("bla bla bla", true));            // testing
 
         return modelAndView;
 

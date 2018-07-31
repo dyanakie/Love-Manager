@@ -16,7 +16,7 @@
 
 <img th:src="@{${flirtResult.getResultPicUrl()}}">
 <p th:text="${flirtResult.getResultText()}"></p>
-<p><a href="/mainGameScreen"><img src="pics/buttons/next.png"></a></p>
+<p><a th:href="${flirtResult.getLink()}"><img src="pics/buttons/next.png"></a></p>
 
 
 </div>

@@ -44,6 +44,17 @@ public class UserController {
         return modelAndView;
     }
 
+    @GetMapping("/index2")
+    public ModelAndView redirectPage(){
+
+        ModelAndView modelAndView = new ModelAndView("index2");
+
+        modelAndView.addObject("active", service.getActive());
+
+        return modelAndView;
+
+    }
+
 
 
 
