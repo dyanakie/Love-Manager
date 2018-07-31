@@ -37,6 +37,6 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
 
 
         characterRepository.deleteActiveCharacter(userRepository.getActive().getCharacterId());
-        return new FlirtResult("Failure", false);
+        return new FlirtResult("Your approach doesn't fit her type and she stops answering your calls...", false);
     }
 }

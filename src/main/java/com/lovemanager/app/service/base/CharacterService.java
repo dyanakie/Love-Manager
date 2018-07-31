@@ -8,4 +8,6 @@ public interface CharacterService {
 
      void createCharacter();
 
+     void deleteCurrentCharacter(int characterId);
+
 }

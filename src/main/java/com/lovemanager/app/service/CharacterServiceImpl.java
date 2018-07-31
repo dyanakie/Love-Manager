@@ -35,4 +35,10 @@ public class CharacterServiceImpl implements CharacterService {
         characterRepository.saveCharacterIdForUser(user);
     }
 
+    @Override
+    public void deleteCurrentCharacter(int characterId) {
+
+        characterRepository.deleteActiveCharacter(characterId);
+    }
+
 }

@@ -37,6 +37,12 @@ public class NextChallengeController {
 
         ModelAndView modelAndView = new ModelAndView("nextChallenge");
 
+        if(characterService.getCharacterById(service.getActive().getCharacterId()).getLevel() == 7){        // shows end game screen for successful game
+
+            characterService.deleteCurrentCharacter(service.getActive().getCharacterId());
+            return new ModelAndView("finish");
+        }
+
         modelAndView.addObject(service.getActive());
 
         Girl newGirl = nextChallengeService.getNextGirl();

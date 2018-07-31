@@ -53,7 +53,7 @@ public class NextChallengeServiceImpl implements NextChallengeService {
     @Override
     public String[] getUrlPresentationName() {
 
-        int dice = RANDOM.nextInt(4)+1;
+        int dice = RANDOM.nextInt(6)+1;
         String[] girl = new String[3];
 
         switch (dice){
@@ -83,9 +83,15 @@ public class NextChallengeServiceImpl implements NextChallengeService {
                 return girl;
 
             case 5:
-                girl[0] = "/pics/girls/test.jpg";
-                girl[1] = "Larra";
-                girl[2] = "You find Larra sitting in a coffee shop in the middle of the day.She is so gorgeous you just cannot stop staring...";
+                girl[0] = "/pics/girls/Helga.jpg";
+                girl[1] = "Helga";
+                girl[2] = "You find Helga in a night bar very drunk and almost crawling on the floor...";
+                return girl;
+
+            case 6:
+                girl[0] = "/pics/girls/Maria.jpg";
+                girl[1] = "Maria";
+                girl[2] = "You find Maria at class for scubadivers.Oh boy what you do for love...";
                 return girl;
 
 
