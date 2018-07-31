@@ -20,14 +20,13 @@ public class NextChallengeServiceImpl implements NextChallengeService {
     }
 
     @Override
-    public Girl getNextGirl(int level) {                             // returns girl generated according to current level
+    public Girl getNextGirl() {                             // returns girl generated according to current level
 
         String type = getRandomType();
-        int girlLevel = getRandomLevel(level);
         String[] params = getUrlPresentationName();
 
 
-        return new Girl(params[0], params[2], params[1], type, girlLevel);
+        return new Girl(params[0], params[2], params[1], type);
 
     }
 
@@ -49,12 +48,6 @@ public class NextChallengeServiceImpl implements NextChallengeService {
         }
 
         return null;
-    }
-
-    @Override
-    public int getRandomLevel(int level) {
-
-        return RANDOM.nextInt(5)+1;
     }
 
     @Override

@@ -15,21 +15,28 @@
 DELETE FROM `active`;
 /*!40000 ALTER TABLE `active` DISABLE KEYS */;
 INSERT INTO `active` (`id`, `activeId`, `name`, `characterId`) VALUES
-	(1, 18, 'drago', 22);
+	(1, 23, 'drago', 27);
 /*!40000 ALTER TABLE `active` ENABLE KEYS */;
 
--- Dumping data for table lovemanager.character: ~3 rows (approximately)
+-- Dumping data for table lovemanager.character: ~1 rows (approximately)
 DELETE FROM `character`;
 /*!40000 ALTER TABLE `character` DISABLE KEYS */;
-INSERT INTO `character` (`characterId`, `level`, `userId`, `knowledge`, `intelligence`, `physique`, `vehicle`, `outfit`, `accessories`, `itemsOwnedId`) VALUES
-	(22, 0, 18, 3, 2, 4, NULL, NULL, NULL, '0');
+INSERT INTO `character` (`characterId`, `level`, `userId`, `status`, `intelligence`, `physique`, `vehicle`, `outfit`, `accessories`, `itemsOwnedId`) VALUES
+	(27, 1, 23, 0, 0, 0, NULL, NULL, NULL, '0');
 /*!40000 ALTER TABLE `character` ENABLE KEYS */;
 
--- Dumping data for table lovemanager.user: ~3 rows (approximately)
+-- Dumping data for table lovemanager.girl: ~2 rows (approximately)
+DELETE FROM `girl`;
+/*!40000 ALTER TABLE `girl` DISABLE KEYS */;
+INSERT INTO `girl` (`id`, `name`, `type`, `pic`, `presentation`) VALUES
+	(1, 'Penka', 'physique', '/pics/girls/Penka.jpg', 'You find Penka in local chat channel when you are matched...');
+/*!40000 ALTER TABLE `girl` ENABLE KEYS */;
+
+-- Dumping data for table lovemanager.user: ~1 rows (approximately)
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `userName`, `password`, `characterId`) VALUES
-	(18, 'drago', '123', 22);
+	(23, 'drago', '123', 27);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

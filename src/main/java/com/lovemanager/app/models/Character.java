@@ -138,13 +138,13 @@ public class Character {
 
         switch (getLevel()){
 
-            case 0: return  "Grand Looser";
-            case 1: return  "Looser";
-            case 2: return  "Awkard Playboy";
-            case 3: return  "Novice Playboy";
-            case 4: return  "Decent Playboy";
-            case 5: return  "Slick Player";
-            case 6: return  "Grandmaster of the Game";
+            case 1: return  "Grand Looser";
+            case 2: return  "Looser";
+            case 3: return  "Awkard Playboy";
+            case 4: return  "Novice Playboy";
+            case 5: return  "Decent Playboy";
+            case 6: return  "Slick Player";
+            case 7: return  "Grandmaster of the Game";
 
         }
 

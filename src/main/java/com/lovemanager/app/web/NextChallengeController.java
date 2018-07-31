@@ -4,6 +4,7 @@ package com.lovemanager.app.web;
 import com.lovemanager.app.models.Girl;
 import com.lovemanager.app.models.basic.FlirtResult;
 import com.lovemanager.app.service.base.CharacterService;
+import com.lovemanager.app.service.base.GirlService;
 import com.lovemanager.app.service.base.NextChallengeService;
 import com.lovemanager.app.service.base.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,14 @@ public class NextChallengeController {
     private NextChallengeService nextChallengeService;
     private UserService service;
     private CharacterService characterService;
+    private GirlService girlService;
 
     @Autowired
-    public NextChallengeController(NextChallengeService nextChallengeService, UserService service, CharacterService characterService){
+    public NextChallengeController(NextChallengeService nextChallengeService, UserService service, CharacterService characterService, GirlService girlService){
         this.nextChallengeService = nextChallengeService;
         this.characterService = characterService;
         this.service = service;
+        this.girlService = girlService;
     }
 
     @GetMapping("/nextChallenge")
@@ -37,15 +40,15 @@ public class NextChallengeController {
 
         modelAndView.addObject(service.getActive());
 
-        Girl newGirl = nextChallengeService.getNextGirl(characterService.getCharacterById(service.getActive().getCharacterId()).getLevel());
+        Girl newGirl = nextChallengeService.getNextGirl();
 
-        System.out.println("level: " + newGirl.getLevel());
         System.out.println("pic: " + newGirl.getPicUrl());
         System.out.println("pres: " + newGirl.getPresentation());
         System.out.println("type: " + newGirl.getType());
 
         modelAndView.addObject("girl", newGirl);
 
+        girlService.saveGirl(newGirl);
 
         return modelAndView;
     }

@@ -4,6 +4,7 @@ import com.lovemanager.app.data.base.CharacterRepository;
 import com.lovemanager.app.data.base.UserRepository;
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.Character;
+import com.lovemanager.app.models.Girl;
 import com.lovemanager.app.models.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -58,6 +59,7 @@ public class CharacterRepositorySql implements CharacterRepository {
 
         try(Session session = factory.openSession()) {
             session.beginTransaction();
+            newCharacter.setLevel(1);
             session.save(newCharacter);
             session.getTransaction().commit();
             System.out.println(newCharacter.getUserId() + " character id created succesfully");
@@ -118,6 +120,50 @@ public class CharacterRepositorySql implements CharacterRepository {
         System.out.println("Intelligence: " + newCharacter.getIntelligence());
 
         return newCharacter;
+    }
+
+    @Override
+    public void saveGirl(Girl girl) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            Girl current = getActiveGirl();
+            current.setPresentation(girl.getPresentation());
+            current.setId(1);
+            current.setName(girl.getName());
+            current.setType(girl.getType());
+            current.setPicUrl(girl.getPicUrl());
+            session.update(current);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println(girl.getName() + " updated as an active girl.");
+
+    }
+
+    @Override
+    public Girl getActiveGirl(){
+
+        Girl current = new Girl();
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            current = session.get(Girl.class, 1);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        return current;
+
     }
 
 }

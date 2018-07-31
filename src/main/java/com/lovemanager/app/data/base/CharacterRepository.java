@@ -1,6 +1,7 @@
 package com.lovemanager.app.data.base;
 
 import com.lovemanager.app.models.Character;
+import com.lovemanager.app.models.Girl;
 import com.lovemanager.app.models.User;
 
 import java.util.List;
@@ -14,4 +15,8 @@ public interface CharacterRepository {
     void saveCharacterIdForUser(User user);
 
     Character getCharacterById(int id);
+
+    void saveGirl(Girl girl);
+
+    Girl getActiveGirl();
 }
