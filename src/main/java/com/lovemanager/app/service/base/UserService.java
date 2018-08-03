@@ -11,8 +11,10 @@ public interface UserService {
 
     List<User> getAll();
 
-    void checkOrCreateUser(User user);
+    boolean checkPassword(User user);
 
     Active getActive();
+
+    void createUser(User user);
 
 }

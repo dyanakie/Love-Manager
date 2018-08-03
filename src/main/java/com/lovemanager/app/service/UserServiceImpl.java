@@ -27,17 +27,35 @@ public class UserServiceImpl implements UserService {
         return userRepository.getAll();
     }
 
-    @Override
-    public void checkOrCreateUser(User user) {
 
-        if(userRepository.checkForUser(user) == null){
-            userRepository.createUser(user);
-        }else{
-            user = userRepository.getUserByName(user.getUsername());
+    @Override
+    public boolean checkPassword(User user) {
+
+        try{
+           User newUser =  userRepository.getUserByName(user.getUsername());
+
+            if(!newUser.getPassword().equals(user.getPassword())){
+                return false;
+            }
+
+            userRepository.setActiveUser(user);
+
+        }catch (NullPointerException n){
+
+            createUser(user);
         }
 
-        userRepository.setActiveUser(user);
 
+        userRepository.setActiveUser(user);
+        return true;
+
+    }
+
+    @Override
+    public void createUser(User user){
+        userRepository.createUser(user);
+
+        userRepository.setActiveUser(user);
     }
 
     @Override

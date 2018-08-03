@@ -29,6 +29,7 @@ public class UserController {
         User user = new User();
 
         modelAndView.addObject("user", user);
+        modelAndView.addObject("loginInfo", "If the user doesn't exist it will be created.");
 
 
         return modelAndView;
@@ -40,10 +41,12 @@ public class UserController {
 
         ModelAndView modelAndView = new ModelAndView("index2");
 
-        service.checkOrCreateUser(user);
-
-        modelAndView.addObject("active", service.getActive());
-
+        if(!service.checkPassword(user)){
+            modelAndView.addObject("loginInfo", "Wrong username or password.");
+            modelAndView.setViewName("index");
+        }else {
+            modelAndView.addObject("active", service.getActive());
+        }
         return modelAndView;
     }
 
