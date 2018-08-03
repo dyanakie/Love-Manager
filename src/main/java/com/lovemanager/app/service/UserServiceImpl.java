@@ -38,7 +38,6 @@ public class UserServiceImpl implements UserService {
                 return false;
             }
 
-            userRepository.setActiveUser(user);
 
         }catch (NullPointerException n){
 
