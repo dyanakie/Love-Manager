@@ -20,18 +20,22 @@ public class Girl {
     @Column(name = "type")
     private String type;
 
+    @Column(name = "level")
+    private int level;
+
     private String presentation;
 
     public Girl(){
 
     }
 
-    public Girl(String picUrl, String presentation, String name, String type) {
+    public Girl(String picUrl, String presentation, String name, String type, int level) {
 
         this.picUrl = picUrl;
         this.presentation = presentation;
         this.name = name;
         this.type = type;
+        this.level = level;
     }
 
 

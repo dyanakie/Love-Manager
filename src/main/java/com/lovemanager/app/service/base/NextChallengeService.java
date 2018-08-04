@@ -6,7 +6,7 @@ public interface NextChallengeService {
 
     Girl getNextGirl();
 
-    String getRandomType();
-
     String[] getUrlPresentationName();
+
+    int generateGirlLevel();
 }
