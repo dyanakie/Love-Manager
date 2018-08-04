@@ -7,6 +7,8 @@ public interface ChallengeResultService {
 
     FlirtResult calculateResult(String flirtType);
 
+    void levelUp(String type);
+
 
 
 }

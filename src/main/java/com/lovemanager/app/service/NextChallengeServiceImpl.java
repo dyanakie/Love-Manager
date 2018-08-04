@@ -98,7 +98,7 @@ public class NextChallengeServiceImpl implements NextChallengeService {
 
         System.out.println("Character level: " + level);
 
-        level = RANDOM.nextInt(level+2);
+        level = RANDOM.nextInt(level+1);
 
         System.out.println("Generated girl Level: " + level);
 

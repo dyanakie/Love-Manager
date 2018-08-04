@@ -204,4 +204,59 @@ public class CharacterRepositorySql implements CharacterRepository {
 
     }
 
+    @Override
+    public void changeIntelligence(int characterId, int amount) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            Character character = session.get(Character.class,characterId);
+
+            character.setIntelligence(character.getIntelligence()+amount);
+            session.update(character);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void changeStatus(int characterId, int amount) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            Character character = session.get(Character.class,characterId);
+
+            character.setStatus(character.getStatus()+amount);
+            session.update(character);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void changePhysique(int characterId, int amount) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            Character character = session.get(Character.class,characterId);
+
+            character.setPhysique(character.getPhysique()+amount);
+            session.update(character);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+
 }

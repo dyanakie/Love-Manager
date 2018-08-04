@@ -26,7 +26,7 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
         Girl activeGirl = characterRepository.getActiveGirl();
 
         if(activeGirl.getType().equals("weirdo")){
-            characterRepository.levelUp(userRepository.getActive().getCharacterId());
+            levelUp(flirtType);
             return new FlirtResult("She cannot witstand your great charm and quickly falls into your arms", true);
         }
 
@@ -36,7 +36,8 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
 
             if(activeGirl.getLevel() <= characterRepository.getCharacterById(userRepository.getActive().getCharacterId()).getStatLevelByType(flirtType)) {
 
-                characterRepository.levelUp(userRepository.getActive().getCharacterId());
+                levelUp(flirtType);
+
                 return new FlirtResult("She cannot witstand your great charm and quickly falls into your arms", true);
             }else{
 
@@ -50,4 +51,28 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
         characterRepository.deleteActiveCharacter(userRepository.getActive().getCharacterId());
         return new FlirtResult("Your approach doesn't fit her type and she stops answering your calls...", false);
     }
+
+    @Override
+    public void levelUp(String type) {
+
+        int characterId = userRepository.getActive().getCharacterId();
+
+        characterRepository.levelUp(characterId);
+
+        switch (type){
+
+            case "intelligence":
+                characterRepository.changeIntelligence(characterId, 1);
+                break;
+            case "physique":
+                characterRepository.changePhysique(characterId, 1);
+                break;
+            case "status":
+                characterRepository.changeStatus(characterId, 1);
+                break;
+        }
+
+    }
+
+
 }
