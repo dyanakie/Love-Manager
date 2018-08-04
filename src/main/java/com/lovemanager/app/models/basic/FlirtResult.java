@@ -7,8 +7,6 @@ public class FlirtResult {
     private boolean result;
     private String buttonUrl;
     private String link;
-    private int yourStatLevel;
-    private int girlStatLevel;
 
     public FlirtResult(String resultText, Boolean result){
         this.result = result;

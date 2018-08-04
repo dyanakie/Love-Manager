@@ -39,6 +39,9 @@ public class Character {
     @Column(name = "itemsOwnedId")
     private int itemsOwnedId;
 
+    @Column(name = "usedGirls")
+    private String usedGirls;
+
     public Character(){
 
     }
@@ -132,6 +135,14 @@ public class Character {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getUsedGirls() {
+        return usedGirls;
+    }
+
+    public void setUsedGirls(String usedGirls) {
+        this.usedGirls = usedGirls;
     }
 
     public String getTitle(){

@@ -3,93 +3,74 @@ package com.lovemanager.app.service;
 import com.lovemanager.app.data.base.CharacterRepository;
 import com.lovemanager.app.data.base.UserRepository;
 import com.lovemanager.app.models.Girl;
+import com.lovemanager.app.service.base.GirlService;
 import com.lovemanager.app.service.base.NextChallengeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Service
 public class NextChallengeServiceImpl implements NextChallengeService {
 
     public final Random RANDOM = new Random();
+    private GirlService girlService;
 
     private CharacterRepository characterRepository;
     private UserRepository userRepository;
 
     @Autowired
-    public NextChallengeServiceImpl(UserRepository userRepository, CharacterRepository characterRepository){
+    public NextChallengeServiceImpl(UserRepository userRepository, CharacterRepository characterRepository, GirlService girlService){
         this.userRepository = userRepository;
         this.characterRepository = characterRepository;
+        this.girlService = girlService;
+
     }
 
     @Override
     public Girl getNextGirl() {                             // returns random girl with stats generated according to current level
 
-      //  String type = getRandomType();
-        String[] params = getUrlPresentationName();
+        Girl newGirl = getGirl();
 
-        int level = generateGirlLevel();
+        newGirl.setLevel(generateGirlLevel());
 
-        return new Girl(params[0], params[2], params[1], params[3], level);
+        return newGirl;
 
     }
 
     @Override
-    public String[] getUrlPresentationName() {
+    public List<Girl> getUnusedGirls(){
 
-        int dice = RANDOM.nextInt(6)+1;
-        String[] girl = new String[4];
+        HashSet<String> usedGirls = girlService.loadUsedGirls();
 
-        switch (dice){
+       return girlService.loadAllGirls().stream()
+                .filter(x -> !usedGirls.contains(x.getName()))
+                .collect(Collectors.toList());
 
-            case 1:
-                girl[0] = "/pics/girls/test.jpg";
-                girl[1] = "Larra";
-                girl[2] = "You find Larra sitting in a coffee shop in the middle of the day.She is so gorgeous you just cannot stop staring...";
-                girl[3] = "status";
-                return girl;
+    }
 
-            case 2:
-                girl[0] = "/pics/girls/Eve.jpg";
-                girl[1] = "Eve";
-                girl[2] = "You find Eve at a night club.She drops one of her drinks and you hurry to help her...";
-                girl[3] = "physique";
-                return girl;
+    @Override
+    public Girl getGirl(){
 
-            case 3:
-                girl[0] = "/pics/girls/Manoela.jpg";
-                girl[1] = "Manoela";
-                girl[2] = "You find Manoela at a Java conference discussing current convention rules...";
-                girl[3] = "intelligence";
-                return girl;
+        List<Girl> girls = getUnusedGirls();
 
-            case 4:
-                girl[0] = "/pics/girls/Penka.jpg";
-                girl[1] = "Penka";
-                girl[2] = "You find Penka in local chat channel when you are matched...";
-                girl[3] = "physique";
-                return girl;
-
-            case 5:
-                girl[0] = "/pics/girls/Helga.jpg";
-                girl[1] = "Helga";
-                girl[2] = "You find Helga in a night bar very drunk and almost crawling on the floor...";
-                girl[3] = "status";
-                return girl;
-
-            case 6:
-                girl[0] = "/pics/girls/Maria.jpg";
-                girl[1] = "Maria";
-                girl[2] = "You find Maria at class for scubadivers.Oh boy what you do for love...";
-                girl[3] = "intelligence";
-                return girl;
-
-
+        if(girls.size() == 1){
+            return girls.get(0);
         }
 
-        return new String[3];
+        int number = RANDOM.nextInt(girls.size()-1);
+
+        girlService.addUsedGirl(girls.get(number).getName());
+
+        return girls.get(number);
+
     }
+
+
 
     @Override
     public int generateGirlLevel() {
@@ -106,7 +87,7 @@ public class NextChallengeServiceImpl implements NextChallengeService {
             level = 0;
         }
 
-        return level;
+        return 0;
     }
 
 
