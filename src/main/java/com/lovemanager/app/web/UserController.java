@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 
 @Controller
 public class UserController {
@@ -61,6 +62,12 @@ public class UserController {
 
         return modelAndView;
 
+    }
+
+    @GetMapping("/howToPlay")
+    public ModelAndView howToPlayScreen(){
+
+        return new ModelAndView("howToPlay");
     }
 
 
