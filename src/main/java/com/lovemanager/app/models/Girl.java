@@ -78,4 +78,12 @@ public class Girl {
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 }

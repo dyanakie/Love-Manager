@@ -117,8 +117,6 @@ public class CharacterRepositorySql implements CharacterRepository {
             System.out.println(e.getMessage());
         }
 
-        System.out.println("Intelligence: " + newCharacter.getIntelligence());
-
         return newCharacter;
     }
 
@@ -134,6 +132,7 @@ public class CharacterRepositorySql implements CharacterRepository {
             current.setName(girl.getName());
             current.setType(girl.getType());
             current.setPicUrl(girl.getPicUrl());
+            current.setLevel(girl.getLevel());
             session.update(current);
 
             session.getTransaction().commit();

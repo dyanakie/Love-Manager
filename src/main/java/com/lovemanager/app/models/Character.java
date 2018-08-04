@@ -152,4 +152,18 @@ public class Character {
 
     }
 
+    public int getStatLevelByType(String type){                     //return the specific stat when compared of that of the girl
+
+        switch (type){
+
+            case "intelligence": return this.getIntelligence();
+            case "physique": return this.getPhysique();
+            case "status": return this.getStatus();
+
+            default: return this.getLevel();
+
+        }
+
+    }
+
 }

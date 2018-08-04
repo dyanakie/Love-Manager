@@ -96,9 +96,13 @@ public class NextChallengeServiceImpl implements NextChallengeService {
 
         int level = characterRepository.getCharacterById(userRepository.getActive().getCharacterId()).getLevel();
 
-        level = RANDOM.nextInt(level+1)+(level-2);
+        System.out.println("Character level: " + level);
 
-        if(level <0){
+        level = RANDOM.nextInt(level+2);
+
+        System.out.println("Generated girl Level: " + level);
+
+        if(level < 0){
             level = 0;
         }
 

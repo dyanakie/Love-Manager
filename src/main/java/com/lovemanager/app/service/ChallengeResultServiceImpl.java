@@ -30,9 +30,20 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
             return new FlirtResult("She cannot witstand your great charm and quickly falls into your arms", true);
         }
 
+        System.out.println("Girl Level: " + activeGirl.getLevel());
+
         if(activeGirl.getType().equals(flirtType)){
-            characterRepository.levelUp(userRepository.getActive().getCharacterId());
-            return new FlirtResult("She cannot witstand your great charm and quickly falls into your arms", true);
+
+            if(activeGirl.getLevel() <= characterRepository.getCharacterById(userRepository.getActive().getCharacterId()).getStatLevelByType(flirtType)) {
+
+                characterRepository.levelUp(userRepository.getActive().getCharacterId());
+                return new FlirtResult("She cannot witstand your great charm and quickly falls into your arms", true);
+            }else{
+
+                characterRepository.deleteActiveCharacter(userRepository.getActive().getCharacterId());
+                return new FlirtResult("Your approach suits her type but your skill level isn't enough to impress her...  Her Level: " + activeGirl.getLevel() , false);
+
+            }
         }
 
 
