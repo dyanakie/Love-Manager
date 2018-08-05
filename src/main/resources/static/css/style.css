@@ -16,6 +16,8 @@ body {
 ul {
     margin: 0;
     padding: 0;
+    list-style: none;
+
 }
 
 #welcome {
@@ -25,6 +27,7 @@ ul {
 
 #logo {
     padding-top: 20px;
+    padding-bottom: 50px;
     text-align: center;
 
 }
@@ -33,3 +36,21 @@ ul {
     width: 400px;
 
 }
+#blocks {
+    min-height: 400px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#blocks .block {
+    padding-top: 20px;
+    float: left;
+    text-align: center;
+    width: 33.3%;
+}
+#blocks .items li {
+    display: inline;
+    padding: 10px;
+
+}
+

@@ -20,37 +20,88 @@
     </div>
 
 
-    <div>
-        <img src="pics/character.png">
+    <div id="blocks">
+        <div class="container">
+            <div class="block">
+                <img src="pics/character.png" id="char">
+
+            </div>
+
+            <div class="block">
+                <div class="items">
+                    <h1>Choose Your Weapons</h1>
+                    <ul>
+                        <li id="acc">
+                            Accessories
+                        </li>
+                        <li id="clothing">
+                            Outfit
+                        </li>
+                        <li id="vehicle">
+                            Vehicle
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block">
+                <div class="stats">
+                    <h2>Profile</h2>
+                    <ul>
+                        <li th:text="'Level:' + ${character.getLevel()}">
+                        </li>
+
+                        <li th:text="'Title:' + ${character.getTitle()}">
+                        </li>
+
+                        <li th:text="'Physique:' + ${character.getPhysique()}">
+                        </li>
+
+                        <li th:text="'Intelligence:' + ${character.getIntelligence()}">
+                        </li>
+                        
+                        <li th:text="'Social Status: ' + ${character.getStatus()}">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="items">
-        <p>Choose Your Weapons</p>
-        <ul>
-            <li id="acc">
-                Accessories
-            </li>
-            <li id="clothing">
-                Outfit
-            </li>
-            <li id="vehicle">
-                Vehicle
-            </li>
-        </ul>
-    </div>
 
 
-    <div style="float: right; margin-right: 50px; font-family: 'Comic Sans MS'">
-        <p th:text="'Level ' + ${character.getLevel()}"></p>
-        <p th:text="'Title: ' + ${character.getTitle()}"></p>
-        <h2>APPEARANCE</h2>
-        <p th:text="'Physique:      ' + ${character.getPhysique()}"></p>
-        <p th:text="'Intelligence:  ' + ${character.getIntelligence()}"></p>
-        <p th:text="'Social Status: ' + ${character.getStatus()}"></p>
 
-    </div>
 
-    </div>
+    <!--<div>-->
+        <!--<img src="pics/character.png">-->
+    <!--</div>-->
+
+    <!--<div class="items">-->
+        <!--<p>Choose Your Weapons</p>-->
+        <!--<ul>-->
+            <!--<li id="acc">-->
+                <!--Accessories-->
+            <!--</li>-->
+            <!--<li id="clothing">-->
+                <!--Outfit-->
+            <!--</li>-->
+            <!--<li id="vehicle">-->
+                <!--Vehicle-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+
+    <!--<div style="float: right; margin-right: 50px; font-family: 'Comic Sans MS'">-->
+        <!--<p th:text="'Level ' + ${character.getLevel()}"></p>-->
+        <!--<p th:text="'Title: ' + ${character.getTitle()}"></p>-->
+        <!--<h2>APPEARANCE</h2>-->
+        <!--<p th:text="'Physique:      ' + ${character.getPhysique()}"></p>-->
+        <!--<p th:text="'Intelligence:  ' + ${character.getIntelligence()}"></p>-->
+        <!--<p th:text="'Social Status: ' + ${character.getStatus()}"></p>-->
+
+    <!--</div>-->
+
+    <!--</div>-->
 
 
     <div class="footer" style="text-align: center; padding-top: 100px">
