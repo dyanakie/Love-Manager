@@ -2,22 +2,45 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
 
-<div style="text-align: center">
-<p th:text="'Welcome , ' + ${active.getName()}"></p>
-<p><img src="pics/playboymanagerLogo.jpg"></p>
-</div>
-<hr>
+<section id="Main">
+    <header>
+        <div class="container">
+            <div id="welcome">
+                <p th:text="'Welcome, ' + ${active.getName()}"></p>
+            </div>
+        </div>
+    </header>
+    <div id="logo">
+        <img src="pics/lovemanagerLogo.jpg">
+    </div>
 
-<div style="text-align: center">
-<img src="pics/characterWhole.jpg">
 
-      <div style="float: right; margin-right: 50px; font-family: 'Comic Sans MS'">
+    <div>
+        <img src="pics/character.png">
+    </div>
+
+    <div class="items">
+        <p>Choose Your Weapons</p>
+        <ul>
+            <li id="acc">
+                Accessories
+            </li>
+            <li id="clothing">
+                Outfit
+            </li>
+            <li id="vehicle">
+                Vehicle
+            </li>
+        </ul>
+    </div>
+
+
+    <div style="float: right; margin-right: 50px; font-family: 'Comic Sans MS'">
         <p th:text="'Level ' + ${character.getLevel()}"></p>
         <p th:text="'Title: ' + ${character.getTitle()}"></p>
         <h2>APPEARANCE</h2>
@@ -25,16 +48,15 @@
         <p th:text="'Intelligence:  ' + ${character.getIntelligence()}"></p>
         <p th:text="'Social Status: ' + ${character.getStatus()}"></p>
 
-      </div>
+    </div>
 
-</div>
+    </div>
 
-<p style="text-align: center"> <a href=""><img src="pics/buttons/outfit.png"></a>    <a href=""><img src="pics/buttons/vehicle.png"></a>     <a href=""><img src="pics/buttons/accessories.png"></a> </p>
 
-<div class="footer" style="text-align: center; padding-top: 100px">
-      <a href="nextChallenge"><img src="pics/buttons/nextChallenge.png"></a>
-</div>
-
+    <div class="footer" style="text-align: center; padding-top: 100px">
+        <a href="nextChallenge"><img src="pics/buttons/nextChallenge.png"></a>
+    </div>
+</section>
 
 </body>
 </html>

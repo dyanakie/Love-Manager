@@ -1,3 +1,35 @@
-.header{
+body {
+    background: white;
+    font-family: 'Comic Sans MS';
+    font-size: 15px;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+#welcome {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#logo {
+    padding-top: 20px;
     text-align: center;
+
+}
+
+#logo img {
+    width: 400px;
+
 }
