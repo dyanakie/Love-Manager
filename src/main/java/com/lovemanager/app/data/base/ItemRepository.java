@@ -6,9 +6,14 @@ import java.util.List;
 
 public interface ItemRepository {
 
-    List<Item> getCurrentVehicle(int level);
+    List<Item> getAllItems();
 
-    List<Item> getCurrentAccessorie(int level);
+    int getCurrentVehicle(int characterId);
+    int getCurrentOutfit(int characterId);
+    int getCurrentAccessorie(int characterId);
 
-    List<Item> getCurrentOutfit(int level);
+    void setCurrentVehicle(int id);
+    void setCurrentOutfit(int id);
+    void setCurrentAccessorie(int id);
+
 }
