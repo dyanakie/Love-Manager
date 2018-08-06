@@ -43,7 +43,7 @@ public class NextChallengeServiceImpl implements NextChallengeService {
     }
 
     @Override
-    public List<Girl> getUnusedGirls(){
+    public List<Girl> getUnusedGirls(){                                  // gets all girls and checks which of them are used by this character(uses the table)
 
         HashSet<String> usedGirls = girlService.loadUsedGirls();
 
@@ -73,7 +73,7 @@ public class NextChallengeServiceImpl implements NextChallengeService {
 
 
     @Override
-    public int generateGirlLevel() {
+    public int generateGirlLevel() {                                                                                     //generates girl level according to character level
 
         int level = characterRepository.getCharacterById(userRepository.getActive().getCharacterId()).getLevel();
 

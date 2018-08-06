@@ -48,7 +48,7 @@ public class GirlServiceImpl implements GirlService {
     }
 
     @Override
-    public HashSet<String> loadUsedGirls() {
+    public HashSet<String> loadUsedGirls() {                                                                       // loads all girls that are used by this character to a hashset for check later
 
         String[] used = girlsRepository.getUsedGirls(userRepository.getActive().getCharacterId()).split(" ");
         HashSet<String> hash = new HashSet<>();
@@ -62,7 +62,7 @@ public class GirlServiceImpl implements GirlService {
     }
 
     @Override
-    public void addUsedGirl(String name){
+    public void addUsedGirl(String name){                                                             // adds a girl that was used to the table data
         girlsRepository.addUsedGirl(userRepository.getActive().getCharacterId(), name);
     }
 

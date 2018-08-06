@@ -21,8 +21,8 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
     }
 
     @Override
-    public FlirtResult calculateResult(String flirtType) {
-
+    public FlirtResult calculateResult(String flirtType) {                                                     // check if flirt type matches girl type
+                                                                                                           //if yes checks if girl level is equal or higher than character specific skill
         Girl activeGirl = characterRepository.getActiveGirl();
 
         if(activeGirl.getType().equals("weirdo")){
@@ -48,7 +48,7 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
         }
 
 
-        characterRepository.deleteActiveCharacter(userRepository.getActive().getCharacterId());
+        characterRepository.deleteActiveCharacter(userRepository.getActive().getCharacterId());                                      // deletes character if fails
         return new FlirtResult("Your approach doesn't fit her type and she stops answering your calls...", false);
     }
 
