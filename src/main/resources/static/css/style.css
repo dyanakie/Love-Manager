@@ -1,10 +1,13 @@
+/*General*/
 body {
+    height: 110%;
     background: white;
-    font-family: 'Comic Sans MS';
+    font-family: 'Comic Sans MS', sans-serif;
     font-size: 15px;
     line-height: 1;
     padding: 0;
     margin: 0;
+
 }
 
 .container {
@@ -20,14 +23,25 @@ ul {
 
 }
 
+/*Header*/
+
+#main header {
+
+    padding-top: 30px;
+    min-height: 50px;
+    width: 100%;
+    border: orangered 20px ridge;
+
+}
+
 #welcome {
     text-decoration: none;
     font-size: 16px;
+
 }
 
 #logo {
-    padding-top: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     text-align: center;
 
 }
@@ -36,21 +50,109 @@ ul {
     width: 400px;
 
 }
+
+/*Character blocks*/
 #blocks {
-    min-height: 400px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    background-color: blueviolet;
+    font-size: 20px;
+    line-height: 1.5;
+    color: orange;
+    min-height: 500px;
+    padding-top-top: 30px;
+    padding-bottom: 0;
+    border: orange 6px ridge;
+
 }
 
 #blocks .block {
+
     padding-top: 20px;
     float: left;
     text-align: center;
     width: 33.3%;
 }
+
+#blocks img {
+    width: 400px;
+}
+
 #blocks .items li {
     display: inline;
     padding: 10px;
 
 }
 
+.table-striped {
+    margin-top: 40px;
+
+}
+
+.itemBox li {
+
+    background: black;
+    width: 150px;
+    height: 150px;
+    float: left;
+    text-align: center;
+    list-style: none;
+    margin-top: 20%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+/*Next challenge*/
+
+#next {
+    background: orangered;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    border: orangered 20px ridge;;
+
+}
+
+/*Items Dropdown*/
+
+.items {
+    padding-top: 20px;
+    position: absolute;
+}
+
+.items li {
+    height: auto;
+    width: 150px;
+    float: left;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .9) inset, 0 1px 3px rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+.items a {
+
+    text-decoration: none;
+    color: orangered;
+    text-shadow: 0 1px #fff;
+    display: block;
+}
+
+.items li ul {
+    display: none;
+    height: auto;
+    margin-left: -11px;
+    padding: 0;
+}
+
+.items li:hover ul {
+    display: block;
+}
+
+.items li:hover, a:hover {
+    background: #e8e8e8;
+}

@@ -1,23 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Love Manager</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
 
-<section id="Main">
+<section id="main">
     <header>
         <div class="container">
             <div id="welcome">
                 <p th:text="'Welcome, ' + ${active.getName()}"></p>
             </div>
+            <div id="logo">
+                <img src="pics/loveManagerLogo.jpg">
+            </div>
         </div>
     </header>
-    <div id="logo">
-        <img src="pics/loveManagerLogo.png">
-    </div>
 
 
     <div id="blocks">
@@ -28,83 +30,82 @@
             </div>
 
             <div class="block">
-                <div class="items">
-                    <h1>Choose Your Weapons</h1>
-                    <ul>
-                        <li id="acc">
-                            Accessories
-                        </li>
-                        <li id="clothing">
-                            Outfit
-                        </li>
-                        <li id="vehicle">
-                            Vehicle
-                        </li>
+
+                    <div id="items">
+                        <h1>Choose Your Weapons</h1>
+                        <ul class="items">
+                            <li><a href="#">Accessories</a>                                <ul>
+                                <li><a href="#">Glasses</a></li>
+                                <li><a href="#">Gold Chain</a></li>
+                                <li><a href="#">Sun Glasses</a></li>
+                                <li><a href="#">Watch</a></li>
+                                <li><a href="#">Gold Teeth</a></li>
+                            </ul></li>
+                            <li><a href="#">Outfit</a>
+                                <ul>
+                                    <li><a href="#">Black Suit</a></li>
+                                    <li><a href="#">Casual Shirt</a></li>
+                                    <li><a href="#">T-Shirt</a></li>
+                                    <li><a href="#">Sweat Suit</a></li>
+                                </ul></li>
+                            <li><a href="#">Vehicle</a>
+                                <ul>
+                                    <li><a href="#">Bicycle</a></li>
+                                    <li><a href="#">Classic Car</a></li>
+                                    <li><a href="#">Sports Car</a></li>
+                                    <li><a href="#">Crazy Car</a></li>
+                                    <li><a href="#">Limo</a></li>
+                                    <li><a href="#">Tractor</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                <div class="itemBox">
+                    <ul class="itemBox">
+                        <li><a href="#" id="accBox"></a></li>
+                        <li><a href="#" id="outfitBox"></a></li>
+                        <li><a href="#" id="vehicleBox"></a></li>
                     </ul>
+
                 </div>
             </div>
             <div class="block">
-                <div class="stats">
-                    <h2>Profile</h2>
-                    <ul>
-                        <li th:text="'Level:' + ${character.getLevel()}">
-                        </li>
+                <div class="container">
+                    <div class="statsTable">
+                        <h2>PROFILE</h2>
+                        <table class="table table-striped">
 
-                        <li th:text="'Title:' + ${character.getTitle()}">
-                        </li>
-
-                        <li th:text="'Physique:' + ${character.getPhysique()}">
-                        </li>
-
-                        <li th:text="'Intelligence:' + ${character.getIntelligence()}">
-                        </li>
-                        
-                        <li th:text="'Social Status: ' + ${character.getStatus()}">
-                        </li>
-                    </ul>
+                            <tbody>
+                            <tr>
+                                <td>Level:</td>
+                                <td th:text="${character.getLevel()}"></td>
+                            </tr>
+                            <tr>
+                                <td>Title:</td>
+                                <td th:text="${character.getTitle()}"></td>
+                            </tr>
+                            <tr>
+                                <td>Physique:</td>
+                                <td th:text="${character.getPhysique()}"></td>
+                            </tr>
+                            <tr>
+                                <td>Intelligence:</td>
+                                <td th:text="${character.getIntelligence()}"></td>
+                            <tr>
+                                <td>Social Status:</td>
+                                <td th:text="${character.getStatus()}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
-
-
-    <!--<div>-->
-        <!--<img src="pics/character.png">-->
-    <!--</div>-->
-
-    <!--<div class="items">-->
-        <!--<p>Choose Your Weapons</p>-->
-        <!--<ul>-->
-            <!--<li id="acc">-->
-                <!--accessories-->
-            <!--</li>-->
-            <!--<li id="clothing">-->
-                <!--Outfit-->
-            <!--</li>-->
-            <!--<li id="vehicle">-->
-                <!--Vehicle-->
-            <!--</li>-->
-        <!--</ul>-->
-    <!--</div>-->
-
-
-    <!--<div style="float: right; margin-right: 50px; font-family: 'Comic Sans MS'">-->
-        <!--<p th:text="'Level ' + ${character.getLevel()}"></p>-->
-        <!--<p th:text="'Title: ' + ${character.getTitle()}"></p>-->
-        <!--<h2>APPEARANCE</h2>-->
-        <!--<p th:text="'Physique:      ' + ${character.getPhysique()}"></p>-->
-        <!--<p th:text="'Intelligence:  ' + ${character.getIntelligence()}"></p>-->
-        <!--<p th:text="'Social Status: ' + ${character.getStatus()}"></p>-->
-
-    <!--</div>-->
-
-    <!--</div>-->
-
-
-    <div class="footer" style="text-align: center; padding-top: 100px">
+    <div id="next">
         <a href="nextChallenge"><img src="pics/buttons/nextChallenge.png"></a>
     </div>
 </section>
