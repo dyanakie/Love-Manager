@@ -2,6 +2,7 @@ package com.lovemanager.app.configuration;
 
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.Girl;
+import com.lovemanager.app.models.Item;
 import com.lovemanager.app.models.User;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,7 @@ public class FactorySession {
                 .addAnnotatedClass(Character.class)
                 .addAnnotatedClass(Active.class)
                 .addAnnotatedClass(Girl.class)
+                .addAnnotatedClass(Item.class)
                 .buildSessionFactory();
     }
 }
