@@ -11,7 +11,7 @@ public class Item {
     private int id;
 
     @Column(name = "name")
-    private String username;
+    private String name;
 
     @Column(name = "picUrl")
     private String password;
@@ -25,17 +25,21 @@ public class Item {
     @Column(name = "bonus")
     private int bonus;
 
+    @Column(name = "statsType")
+    private String statsType;
+
     public Item(){
 
     }
 
-    public Item(int id, String username, String password, String type, int level, int bonus) {
+    public Item(int id, String username, String password, String type, int level, int bonus, String statsType) {
         this.id = id;
-        this.username = username;
+        this.name = username;
         this.password = password;
         this.type = type;
         this.level = level;
         this.bonus = bonus;
+        this.statsType = statsType;
     }
 
     public int getId() {
@@ -46,12 +50,12 @@ public class Item {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String username) {
+        this.name = username;
     }
 
     public String getPassword() {
@@ -84,5 +88,18 @@ public class Item {
 
     public void setBonus(int bonus) {
         this.bonus = bonus;
+    }
+
+    public String getStatsType() {
+        return statsType;
+    }
+
+    public void setStatsType(String statsType) {
+        this.statsType = statsType;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " of type " + getType() + " with bonus " + getBonus() + " to " + getStatsType();
     }
 }
