@@ -37,12 +37,12 @@ public class GirlServiceImpl implements GirlService {
 
         ArrayList<Girl> pool = new ArrayList<>();
 
-        pool.add(new Girl("/pics/girls/test.jpg", "You find Larra sitting in a coffee shop in the middle of the day.She is so gorgeous you just cannot stop staring...", "Larra", "status", 0));
+        pool.add(new Girl("/pics/girls/test.jpg", "You find Larra sitting in a coffee shop in the middle of the day.She is dressed gorgeously and seems to know she is attractive...", "Larra", "status", 0));
         pool.add(new Girl("/pics/girls/Eve.jpg", "You find Eve at a night club.She drops one of her drinks and you hurry to help her...", "Eve", "physique", 0));
         pool.add(new Girl("/pics/girls/Manoela.jpg","You find Manoela at a Java conference discussing current convention rules...", "Manoela", "intelligence", 0));
         pool.add(new Girl("/pics/girls/Penka.jpg","You find Penka in local chat channel when you are matched...", "Penka","physique", 0 ));
-        pool.add(new Girl("/pics/girls/Helga.jpg", "You find Helga in a night bar very drunk and almost crawling on the floor...", "Helga","status", 0 ));
-        pool.add(new Girl("/pics/girls/Maria.jpg", "You find Maria at class for scubadivers.Oh boy what you do for love...", "Maria", "intelligence", 0 ));
+        pool.add(new Girl("/pics/girls/Helga.jpg", "You find Helga in a night bar very drunk.She asks what do you work and if you can buy her a drink...", "Helga","status", 0 ));
+        pool.add(new Girl("/pics/girls/Maria.jpg", "You find Maria at class for scubadivers.She seems to know her thing very well...", "Maria", "intelligence", 0 ));
         pool.add(new Girl("/pics/girls/Kornelia.jpg", "You find Cornelia at a dating website for sex arrangement...", "Cornelia", "physique", 0));
         pool.add(new Girl("/pics/girls/Elizabeth.jpg", "You find Elizabeth at a business conference.She is a manager of a successful Real Estate company...", "Elizabeth", "status", 0));
         pool.add(new Girl("/pics/girls/Dezdemona.jpg", "You find Dezdemona reading a book in the park.You save her from a barking dog and start talking...", "Dezdemona", "intelligence", 0));
