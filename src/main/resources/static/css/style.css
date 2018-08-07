@@ -1,6 +1,6 @@
 /*General*/
 body {
-    height: 110%;
+
     background: white;
     font-family: 'Comic Sans MS', sans-serif;
     font-size: 15px;
@@ -22,16 +22,15 @@ ul {
     list-style: none;
 
 }
+/*MAIN PAGE ----------------------------------- */
 
 /*Header*/
-
-#main header {
+header {
 
     padding-top: 30px;
     min-height: 50px;
     width: 100%;
-    border: orangered 20px ridge;
-
+    border-bottom: orange 10px ridge;
 }
 
 #welcome {
@@ -41,6 +40,7 @@ ul {
 }
 
 #logo {
+    padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
 
@@ -57,10 +57,9 @@ ul {
     font-size: 20px;
     line-height: 1.5;
     color: orange;
-    min-height: 500px;
-    padding-top-top: 30px;
+    min-height: 550px;
+    padding-top: 50px;
     padding-bottom: 0;
-    border: orange 6px ridge;
 
 }
 
@@ -104,11 +103,11 @@ ul {
 /*Next challenge*/
 
 #next {
-    background: orangered;
+    border-top: orange 10px ridge;
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
-    border: orangered 20px ridge;;
+
 
 }
 
@@ -155,4 +154,21 @@ ul {
 
 .items li:hover, a:hover {
     background: #e8e8e8;
+}
+
+/*LOGIN PAGE -------------------------------------------- */
+
+.employeeForm {
+
+    text-align: center;
+    padding-top: 100px;
+    background: url("static/pics/purple-bg.png") no-repeat;
+}
+
+/*Start Game Page ----------------------------------------*/
+
+.startGame {
+
+    text-align: center;
+    padding-top: 100px;
 }

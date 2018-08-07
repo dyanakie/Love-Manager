@@ -2,25 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div style="text-align: center">
- <p><img src="pics/loveManagerLogo.png"></p>
-</div>
-<hr>
-<div style="text-align: center">
-
-<img th:src="@{${flirtResult.getResultPicUrl()}}">
-<p th:text="${flirtResult.getResultText()}"></p>
-<p><a th:href="${flirtResult.getLink()}"><img src="pics/buttons/next.png"></a></p>
-
-
+<div id="logo">
+    <img src="pics/loveManagerLogo.jpg">
 </div>
 
+<div class="startGame">
+    <img th:src="@{${flirtResult.getResultPicUrl()}}">
+    <p th:text="${flirtResult.getResultText()}"></p>
+    <p><a th:href="${flirtResult.getLink()}"><img src="pics/buttons/next.png"></a></p>
+</div>
 
 </body>
 </html>

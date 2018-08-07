@@ -2,26 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-<div id="logo">
-   <p><img src="pics/loveManagerLogo.jpg"></p>
-   <div class="employeeForm">
-                   <h1>User:</h1>
-                   <form action="#" th:action="@{/}" th:object="${user}" method="post">
-                   <p>Username: <input type="text" th:field="*{username}" /></p>
-                   <p>Password: <input type="password" value="FakePSW" th:field="*{password}" /></p>
-                   <p><input type="submit" value="Login" /><input type="reset" value="Reset" /></p>
-                   </form>
-                   <p th:text="${loginInfo}"></p>
 
-           </div>
+    <div class="container">
+        <div id="logo">
+            <img src="pics/loveManagerLogo.jpg">
+        </div>
+    </div>
 
+<div class="container">
+    <div class="employeeForm">
+        <h1>User:</h1>
+        <form action="#" th:action="@{/}" th:object="${user}" method="post">
+            <p>Username: <input type="text" th:field="*{username}"/></p>
+            <p>Password: <input type="password" value="FakePSW" th:field="*{password}"/></p>
+            <p><input type="submit" value="Login"/><input type="reset" value="Reset"/></p>
+        </form>
+        <p th:text="${loginInfo}"></p>
+    </div>
 </div>
-
 
 </body>
 </html>
