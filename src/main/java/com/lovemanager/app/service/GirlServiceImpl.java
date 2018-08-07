@@ -43,7 +43,9 @@ public class GirlServiceImpl implements GirlService {
         pool.add(new Girl("/pics/girls/Penka.jpg","You find Penka in local chat channel when you are matched...", "Penka","physique", 0 ));
         pool.add(new Girl("/pics/girls/Helga.jpg", "You find Helga in a night bar very drunk and almost crawling on the floor...", "Helga","status", 0 ));
         pool.add(new Girl("/pics/girls/Maria.jpg", "You find Maria at class for scubadivers.Oh boy what you do for love...", "Maria", "intelligence", 0 ));
-
+        pool.add(new Girl("/pics/girls/Kornelia.jpg", "You find Cornelia at a dating website for sex arrangement...", "Cornelia", "physique", 0));
+        pool.add(new Girl("/pics/girls/Elizabeth.jpg", "You find Elizabeth at a business conference.She is a manager of a successful Real Estate company...", "Elizabeth", "status", 0));
+        pool.add(new Girl("/pics/girls/Dezdemona.jpg", "You find Dezdemona reading a book in the park.You save her from a barking dog and start talking...", "Dezdemona", "intelligence", 0));
         return pool;
     }
 

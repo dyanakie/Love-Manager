@@ -34,7 +34,7 @@ public class LoveManagerConsoleTest {
 
         User user = session.get(User.class, 5);
 
-        System.out.println(user.getCharacter().getLevel());
+      //  System.out.println(user.getCharacter().getLevel());
 
         session.getTransaction().commit();
 

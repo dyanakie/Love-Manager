@@ -20,7 +20,7 @@ public class User {
     @Column(name = "characterId")
     private int characterId;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JoinColumn(name = "id")
     private Character character;
 
