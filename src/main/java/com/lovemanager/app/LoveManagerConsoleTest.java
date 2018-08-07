@@ -30,10 +30,11 @@ public class LoveManagerConsoleTest {
 
        // Character thisCharacter = session.get(Character.class, 18);
 
-        List<Item> allItems = session.createQuery("from Item").list();
+      //  List<Item> allItems = session.createQuery("from Item").list();
 
+        User user = session.get(User.class, 5);
 
-        System.out.println(allItems);
+        System.out.println(user.getCharacter().getLevel());
 
         session.getTransaction().commit();
 

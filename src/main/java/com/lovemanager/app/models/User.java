@@ -20,13 +20,18 @@ public class User {
     @Column(name = "characterId")
     private int characterId;
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id")
+    private Character character;
+
     public User(){
 
     }
 
-    public User(String username, String password) {
+    public User(String username, String password, Character character) {
         this.username = username;
         this.password = password;
+        this.character = character;
     }
 
     public int getId() {
@@ -61,4 +66,11 @@ public class User {
         this.characterId = characterId;
     }
 
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
 }

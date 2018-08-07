@@ -60,6 +60,7 @@ public class CharacterRepositorySql implements CharacterRepository {
         try(Session session = factory.openSession()) {
             session.beginTransaction();
             newCharacter.setLevel(1);
+            newCharacter.setUser(user);
             session.save(newCharacter);
             session.getTransaction().commit();
             System.out.println(newCharacter.getUserId() + " character id created succesfully");

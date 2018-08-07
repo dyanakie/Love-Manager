@@ -42,11 +42,14 @@ public class Character {
     @Column(name = "usedGirls")
     private String usedGirls;
 
+    @OneToOne(mappedBy = "character")
+    private User user;
+
     public Character(){
 
     }
 
-    public Character(int level, int status, int intelligence, int physique, int itemsOwnedId, String vehicle, String outfit, String accessories) {
+    public Character(int level, int status, int intelligence, int physique, int itemsOwnedId, String vehicle, String outfit, String accessories, User user) {
         this.level = level;
         this.status = status;
         this.intelligence = intelligence;
@@ -55,6 +58,7 @@ public class Character {
         this.outfit = outfit;
         this.accessories = accessories;
         this.itemsOwnedId = itemsOwnedId;
+        this.user = user;
     }
 
     public int getId() {
@@ -143,6 +147,14 @@ public class Character {
 
     public void setUsedGirls(String usedGirls) {
         this.usedGirls = usedGirls;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getTitle(){
