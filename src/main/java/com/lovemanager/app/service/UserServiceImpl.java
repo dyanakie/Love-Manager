@@ -15,6 +15,7 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
     private CharacterRepository characterRepository;
+    private PasswordEncryption encryption = new PasswordEncryption();
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository, CharacterRepository characterRepository){
@@ -31,16 +32,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean checkPassword(User user) {
 
+
+
         try{
            User newUser =  userRepository.getUserByName(user.getUsername());
 
-            if(!newUser.getPassword().equals(user.getPassword())){
+            if(!encryption.decryptPassword(newUser.getPassword()).equals(user.getPassword())){
                 return false;
             }
 
 
         }catch (NullPointerException n){
 
+            user.setPassword(encryption.encryptPassword(user.getPassword()));
             createUser(user);
         }
 
