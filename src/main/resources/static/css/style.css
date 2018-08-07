@@ -152,8 +152,8 @@ header {
     display: block;
 }
 
-.items li:hover, a:hover {
-    background: #e8e8e8;
+.items li:hover a:hover {
+    background: darkgray;
 }
 
 /*LOGIN PAGE -------------------------------------------- */
