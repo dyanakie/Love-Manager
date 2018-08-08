@@ -12,12 +12,6 @@ import java.util.stream.Collectors;
 @Service
 public class ItemServiceImpl implements ItemService {
 
-    ItemRepository itemRepository;
-
-    public ItemServiceImpl(ItemRepository itemRepository){
-        this.itemRepository = itemRepository;
-    }
-
     @Override
     public Item getCurrentOutfit(int level) {
 
