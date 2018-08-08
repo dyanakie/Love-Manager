@@ -7,16 +7,18 @@
 </head>
 <body>
 
-<div class="container">
-    <div id="welcome">
-        <p th:text="'Welcome, ' + ${active.getName()}"></p>
+<header>
+    <div class="container">
+        <div id="welcome">
+            <p th:text="'Welcome, ' + ${active.getName()}"></p>
+        </div>
+        <div id="logo">
+            <img src="pics/loveManagerLogo.png">
+        </div>
     </div>
-    <div id="logo">
-        <img src="pics/loveManagerLogo.jpg">
-    </div>
-</div>
+</header>
 <div class="container">
-    <div class="startGame">
+    <div class="buttonPic">
         <p><a href="mainGameScreen"><img src="pics/buttons/newGame.png"></a></p>
         <p><img src="pics/buttons/loadGame.png"></p>
         <p><a href="howToPlay"><img src="pics/buttons/howToPlay.png"></a></p>

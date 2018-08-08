@@ -7,15 +7,23 @@
 </head>
 <body>
 
-<div id="logo">
-    <img src="pics/loveManagerLogo.jpg">
-</div>
+<header>
+    <div class="container">
+        <div id="welcome">
+            <p th:text="'Welcome, ' + ${active.getName()}"></p>
+        </div>
+        <div id="logo">
+            <img src="pics/loveManagerLogo.png">
+        </div>
+    </div>
+</header>
 
-<div class="startGame">
+<div class="buttonPic">
     <img th:src="@{${flirtResult.getResultPicUrl()}}">
     <p th:text="${flirtResult.getResultText()}"></p>
-    <p><a th:href="${flirtResult.getLink()}"><img src="pics/buttons/next.png"></a></p>
 </div>
-
+<div style="text-align: center">
+    <a th:href="${flirtResult.getLink()}"><img src="pics/buttons/next.png"></a>
+</div>
 </body>
 </html>

@@ -11,74 +11,76 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+
     list-style: none;
 
 }
+
 /*MAIN PAGE ----------------------------------- */
 
 /*Header*/
 header {
 
     padding-top: 30px;
+    padding-bottom: 30px;
     min-height: 50px;
     width: 100%;
     border-bottom: orange 10px ridge;
 }
 
 #welcome {
+    float: right;
     text-decoration: none;
     font-size: 16px;
 
 }
 
 #logo {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
+    float: left;
+    display: inline;
 
+}
+#logoCenter {
+
+    padding: 30px;
+    text-align: center;
+}
+#logoCenter img {
+
+    width: 20%;
 }
 
 #logo img {
-    width: 400px;
+    width: 200px;
 
 }
 
 /*Character blocks*/
 #blocks {
     background-color: blueviolet;
-    font-size: 20px;
-    line-height: 1.5;
     color: orange;
-    min-height: 550px;
-    padding-top: 50px;
-    padding-bottom: 0;
+    min-height: 500px;
+    padding-top: 20px;
+    padding-bottom: 40px;
 
 }
 
 #blocks .block {
 
-    padding-top: 20px;
     float: left;
     text-align: center;
-    width: 33.3%;
+    width: 27.3%;
+    margin: 2%;
 }
 
 #blocks img {
-    width: 400px;
-}
-
-#blocks .items li {
-    display: inline;
-    padding: 10px;
-
+    width: 300px;
 }
 
 .table-striped {
@@ -89,48 +91,46 @@ header {
 .itemBox li {
 
     background: black;
-    width: 150px;
-    height: 150px;
+    width: 30%;
+    height: 100px;
     float: left;
     text-align: center;
     list-style: none;
-    margin-top: 20%;
     border: 1px solid black;
     border-radius: 3px;
-    margin-left: 10px;
+    margin: 5px;
 }
 
 /*Next challenge*/
 
-#next {
-    border-top: orange 10px ridge;
+.buttonPic {
+
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
 
-
+}
+.buttonPic img {
+    width: 30%;
 }
 
 /*Items Dropdown*/
 
 .items {
     padding-top: 20px;
-    position: absolute;
 }
 
 .items li {
+    width: 30%;
     height: auto;
-    width: 150px;
     float: left;
     text-align: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
     background-color: white;
     border: 1px solid white;
     box-shadow: 0 1px 0 rgba(255, 255, 255, .9) inset, 0 1px 3px rgba(0, 0, 0, .1);
     border-radius: 3px;
     margin-left: 10px;
+    padding: 10px;
 }
 
 .items a {
@@ -147,13 +147,16 @@ header {
     margin-left: -11px;
     padding: 0;
 }
-
+.items li ul li{
+    width: 120px;
+}
 .items li:hover ul {
     display: block;
 }
 
 .items li:hover a:hover {
-    background: darkgray;
+    background: lightgrey;
+
 }
 
 /*LOGIN PAGE -------------------------------------------- */
@@ -161,14 +164,37 @@ header {
 .employeeForm {
 
     text-align: center;
-    padding-top: 100px;
+    padding-top: 30px;
     background: url("static/pics/purple-bg.png") no-repeat;
 }
 
-/*Start Game Page ----------------------------------------*/
-
-.startGame {
-
+.girlPic {
     text-align: center;
-    padding-top: 100px;
+}
+.girlPic img {
+
+    width: 500px;
+}
+
+@media(max-width: 1024px) {
+
+    #blocks .block,
+    .items li,
+    #welcome,
+    #logo,
+    .buttonPic,
+    .girlPic{
+
+        float: none;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .girlPic img,
+    .buttonPic img {
+
+        width: 100%;
+    }
+
 }

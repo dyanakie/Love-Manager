@@ -2,25 +2,36 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header>
+    <div class="container">
+        <div id="welcome">
+            <p th:text="'Welcome, ' + ${active.getName()}"></p>
+        </div>
+        <div id="logo">
+            <img src="pics/loveManagerLogo.png">
+        </div>
+    </div>
+</header>
 
-<div id="logo">
-<p><img src="pics/loveManagerLogo.png"></p>
-</div>
-<hr>
 <div style="text-align: center">
-<img  th:src="@{${girl.getPicUrl()}}" height="420px">
-<p th:text="${girl.getName()}"></p>
-<p th:text="${girl.getPresentation()}"></p>
-<hr>
-<p>How do you flirt with this girl?</p>
-<p>   <a href="/intelligenceFlirt"><img src="pics/buttons/intelligentFlirt.png" height="60" border="1"></a>
-      <a href="/physicalFlirt"><img src="pics/buttons/physicalFlirt.png" height="60" border="1"></a>
-      <a href="/socialStatusFlirt"><img src="pics/buttons/socialStatusFlirt.png" height="60" border="1"></a>
-      </p>
+    <div class="girlPic">
+        <img th:src="@{${girl.getPicUrl()}}">
+        <p th:text="${girl.getName()}"></p>
+        <p th:text="${girl.getPresentation()}"></p>
+    </div>
+
+    <p>How do you flirt with this girl?</p>
+    <div class="buttonPic">
+        <ul>
+            <li><a href="/intelligenceFlirt"><img src="pics/buttons/intelligentFlirt.png"></a></li>
+            <li><a href="/physicalFlirt"><img src="pics/buttons/physicalFlirt.png"></a></li>
+            <li><a href="/socialStatusFlirt"><img src="pics/buttons/socialStatusFlirt.png"></a></li>
+        </ul>
+    </div>
 </div>
 
 
