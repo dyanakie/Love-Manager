@@ -43,18 +43,18 @@
                     <ul class="items">
                         <li><a href="#">Accessories</a>
                             <ul th:each="Item : ${accessories}">
-                                <li th:text="${Item.getName()}">Accessorie</li>
+                                <a th:href="'/changeItem/accessorie '+${Item.getName()}"><li th:text="${Item.getName()}">Accessorie</li></a>
 
                             </ul>
                         </li>
                         <li><a href="#">Outfit</a>
                             <ul th:each="Item : ${outfit}">
-                                <li th:text="${Item.getName()}">Outfit</li>
+                               <a th:href="'/changeItem/outfit '+${Item.getName()}"> <li th:text="${Item.getName()}">Outfit</li></a>
                             </ul>
                         </li>
                         <li><a href="#">Vehicle</a>
                             <ul th:each="Item : ${vehicles}">
-                                <li th:text="${Item.getName()}">Vehicle</li>
+                                <a th:href="'/changeItem/vehicle '+${Item.getName()}"><li th:text="${Item.getName()}">Vehicle</li></a>
 
                             </ul>
                         </li>

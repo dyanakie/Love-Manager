@@ -1,5 +1,6 @@
 package com.lovemanager.app.web;
 
+import com.lovemanager.app.models.Character;
 import com.lovemanager.app.models.basic.Item;
 import com.lovemanager.app.models.basic.ActiveItem;
 import com.lovemanager.app.service.base.CharacterService;
@@ -20,6 +21,10 @@ public class MainGameController {
     private CharacterService characterService;
     private ItemService itemService;
 
+    private String accessoryUrl;
+    private String outfitUrl;
+    private String vehicleUrl;
+
     @Autowired
     public MainGameController(UserService service, CharacterService characterService, ItemService itemService){
 
@@ -38,9 +43,11 @@ public class MainGameController {
 
         modelAndView.addObject(service.getActive());
 
-        modelAndView.addObject("character", characterService.getCharacterById(service.getActive().getCharacterId()));
+        Character character =  loadCurrentCharacter();
 
-        modelAndView.addObject("activeItem", new ActiveItem("pics/items/vehicles/bicycle.png", "pics/items/accessories/glasses.png", "pics/items/outfits/shirt.png"));
+        modelAndView.addObject("character", character);
+
+        modelAndView.addObject("activeItem", new ActiveItem(vehicleUrl, outfitUrl, accessoryUrl));
 
         int currentLevel =  characterService.getCharacterById(service.getActive().getCharacterId()).getLevel();
 
@@ -53,6 +60,48 @@ public class MainGameController {
         modelAndView.addObject("outfit", outfit);
 
         return modelAndView;
+
+    }
+
+    private Character loadCurrentCharacter(){
+
+        Character character = characterService.getCharacterById(service.getActive().getCharacterId());
+
+        String accessorie, vehicle, outfit;
+
+        if(character.getLevel() ==1){
+            accessorie = "glasses";
+            vehicle = "bicycle";
+            outfit = "sweat-suit";
+            itemService.changeCurrentAccessorie(character.getId(), "glasses");
+            itemService.changeCurrentOutfit(character.getId(), "sweat-suit");
+            itemService.changeCurrentVehicle(character.getId(), "bicycle");
+        }else {
+            accessorie = itemService.getCurrentAccessorie(character.getId());
+            vehicle = itemService.getCurrentVehicle(character.getId());
+            outfit = itemService.getCurrentOutfit(character.getId());
+        }
+
+            for (Item a :
+                    itemService.getAllItems()) {
+                if (accessorie.equals(a.getName())) {
+                    character.setPhysique(character.getPhysique() + a.getBonus());
+                    accessoryUrl = a.getPicUrl();
+                }
+
+                if (outfit.equals(a.getName())) {
+                    character.setIntelligence(character.getIntelligence() + a.getBonus());
+                    outfitUrl = a.getPicUrl();
+                }
+
+                if (vehicle.equals(a.getName())) {
+                    character.setStatus(character.getStatus() + a.getBonus());
+                    vehicleUrl = a.getPicUrl();
+                }
+            }
+
+
+        return character;
 
     }
 
