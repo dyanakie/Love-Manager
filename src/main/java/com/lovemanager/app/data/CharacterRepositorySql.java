@@ -259,5 +259,61 @@ public class CharacterRepositorySql implements CharacterRepository {
         }
     }
 
+    @Override
+    public void setVehicle(int characterId, String vehicle) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            Character character = session.get(Character.class,characterId);
+
+            character.setVehicle(vehicle);
+            session.update(character);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @Override
+    public void setAccessorie(int characterId, String accessorie) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            Character character = session.get(Character.class,characterId);
+
+            character.setAccessories(accessorie);
+            session.update(character);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void setOutfit(int characterId, String outfit) {
+
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            Character character = session.get(Character.class,characterId);
+
+            character.setOutfit(outfit);
+            session.update(character);
+
+            session.getTransaction().commit();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
 
 }

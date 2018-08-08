@@ -1,6 +1,5 @@
 package com.lovemanager.app.service;
 
-import com.lovemanager.app.data.base.ItemRepository;
 import com.lovemanager.app.models.basic.Item;
 import com.lovemanager.app.service.base.ItemService;
 import org.springframework.stereotype.Service;
