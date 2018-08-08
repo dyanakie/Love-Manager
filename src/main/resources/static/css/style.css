@@ -113,6 +113,9 @@ header {
 .buttonPic img {
     width: 30%;
 }
+.buttonPic li {
+    display: inline;
+}
 
 /*Items Dropdown*/
 
@@ -173,7 +176,8 @@ header {
 }
 .girlPic img {
 
-    width: 500px;
+    width: 600px;
+    height: 500px;
 }
 
 @media(max-width: 1024px) {
@@ -194,7 +198,6 @@ header {
     .girlPic img,
     .buttonPic img {
 
-        border-radius: 30%;
         width: 100%;
     }
     .itemBox li {
