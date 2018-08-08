@@ -82,9 +82,13 @@ public class ItemServiceImpl implements ItemService {
         allItems.add(new Item("red-sport", "vehicles", 4, 4, "status", "pics/items/vehicles/redSports.png"));
         allItems.add(new Item("casual-suit", "outfit", 4, 4, "intelligence", "pics/items/outift/casual-suit.jpg"));
 
-        allItems.add(new Item("golden watch", "accessories", 5, 5, "physique", "pics/items/accessories/watch.jpg"));
+        allItems.add(new Item("golden-watch", "accessories", 5, 5, "physique", "pics/items/accessories/watch.jpg"));
         allItems.add(new Item("ferrari", "vehicles", 5, 5, "status", "pics/items/vehicles/ferary.jpg"));
         allItems.add(new Item("black-suit", "outfit", 5, 5, "intelligence", "pics/items/outift/black-suit.png"));
+
+        allItems.add(new Item("gentleman-pack.png", "accessories", 6, 6, "physique", "pics/items/accessories/gentleman-pack.png"));
+        allItems.add(new Item("limousine", "vehicles", 6, 6, "status", "pics/items/vehicles/limo1.png"));
+        allItems.add(new Item("vintage-suit", "outfit", 6, 6, "intelligence", "pics/items/outift/vintage-suit.jpg"));
 
         return new ArrayList<Item>(allItems);
     }
