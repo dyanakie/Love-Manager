@@ -196,5 +196,10 @@ header {
 
         width: 100%;
     }
+    .itemBox li {
+
+        width: 30%;
+
+    }
 
 }
