@@ -3,6 +3,8 @@ package com.lovemanager.app.web;
 import com.lovemanager.app.models.Character;
 import com.lovemanager.app.models.basic.Item;
 import com.lovemanager.app.models.basic.ActiveItem;
+import com.lovemanager.app.service.ChallengeResultServiceImpl;
+import com.lovemanager.app.service.base.ChallengeResultService;
 import com.lovemanager.app.service.base.CharacterService;
 import com.lovemanager.app.service.base.ItemService;
 import com.lovemanager.app.service.base.UserService;

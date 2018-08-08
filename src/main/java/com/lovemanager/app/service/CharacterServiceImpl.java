@@ -41,4 +41,22 @@ public class CharacterServiceImpl implements CharacterService {
         characterRepository.deleteActiveCharacter(characterId);
     }
 
+    @Override
+    public void changeIntelligence(int characterId, int amount) {
+
+        characterRepository.changeIntelligence(characterId, amount);
+    }
+
+    @Override
+    public void changeStatus(int characterId, int amount) {
+
+        characterRepository.changeStatus(characterId, amount);
+    }
+
+    @Override
+    public void changePhysique(int characterId, int amount) {
+
+        characterRepository.changePhysique(characterId, amount);
+    }
+
 }

@@ -4,7 +4,9 @@ import com.lovemanager.app.data.base.CharacterRepository;
 import com.lovemanager.app.data.base.UserRepository;
 import com.lovemanager.app.models.Girl;
 import com.lovemanager.app.models.basic.FlirtResult;
+import com.lovemanager.app.models.basic.Item;
 import com.lovemanager.app.service.base.ChallengeResultService;
+import com.lovemanager.app.service.base.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +15,13 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
 
     private UserRepository userRepository;
     private CharacterRepository characterRepository;
+    private ItemService itemService;
 
     @Autowired
-    public ChallengeResultServiceImpl(UserRepository userRepository, CharacterRepository characterRepository){
+    public ChallengeResultServiceImpl(UserRepository userRepository, CharacterRepository characterRepository, ItemService itemService){
         this.userRepository = userRepository;
         this.characterRepository = characterRepository;
+        this.itemService = itemService;
     }
 
     @Override
@@ -32,13 +36,20 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
 
         System.out.println("Girl Level: " + activeGirl.getLevel());
 
+        int characterId = userRepository.getActive().getCharacterId();
+
+        int itemBonus = getItemBonusByType(flirtType, characterId);
+        int characterStat = characterRepository.getCharacterById(characterId).getStatLevelByType(flirtType);
+
+        int totalPoints = characterStat + itemBonus;
+
         if(activeGirl.getType().equals(flirtType)){
 
-            if(activeGirl.getLevel() <= characterRepository.getCharacterById(userRepository.getActive().getCharacterId()).getStatLevelByType(flirtType)) {
+            if(activeGirl.getLevel() <= totalPoints) {
 
                 levelUp(flirtType);
 
-                return new FlirtResult("She cannot witstand your great charm and quickly falls into your arms", true);
+                return new FlirtResult("She cannot witstand your great charm and quickly falls into your arms!      Your " + flirtType + " level: " + totalPoints + "   Her " + flirtType + " level: " + activeGirl.getLevel(), true);
             }else{
 
                 characterRepository.deleteActiveCharacter(userRepository.getActive().getCharacterId());
@@ -73,6 +84,40 @@ public class ChallengeResultServiceImpl implements ChallengeResultService {
         }
 
     }
+
+    private int getItemBonusByType(String type, int characterId){
+
+            switch (type){
+
+                case "intelligence":
+                   Item a = itemService.getAllItems().stream()
+                            .filter(x -> x.getName().equals(characterRepository.getCharacterById(characterId).getOutfit()))
+                            .findFirst()
+                            .orElse(null);
+                   return a.getBonus();
+
+                case "physique":
+                    Item b = itemService.getAllItems().stream()
+                            .filter(x -> x.getName().equals(characterRepository.getCharacterById(characterId).getAccessories()))
+                            .findFirst()
+                            .orElse(null);
+                    return b.getBonus();
+
+                case "status":
+                    Item c = itemService.getAllItems().stream()
+                            .filter(x -> x.getName().equals(characterRepository.getCharacterById(characterId).getVehicle()))
+                            .findFirst()
+                            .orElse(null);
+                    return c.getBonus();
+
+                default: return 0;
+
+
+            }
+
+
+    }
+
 
 
 }
