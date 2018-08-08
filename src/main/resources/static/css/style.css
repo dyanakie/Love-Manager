@@ -111,10 +111,14 @@ header {
 
 }
 .buttonPic img {
-    width: 30%;
+    width: 20%;
 }
 .buttonPic li {
     display: inline;
+}
+.itemBox img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 /*Items Dropdown*/
@@ -176,7 +180,6 @@ header {
 }
 .girlPic img {
 
-    width: 600px;
     height: 500px;
 }
 

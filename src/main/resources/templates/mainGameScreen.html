@@ -38,26 +38,29 @@
 
             <div class="block">
 
-                    <div id="items">
-                        <h1>Choose Your Weapons</h1>
-                        <ul class="items">
-                                <li><a href="#">Accessories</a>                                <ul th:each="Item : ${accessories}">
+                <div id="items">
+                    <h1>Choose Your Weapons</h1>
+                    <ul class="items">
+                        <li><a href="#">Accessories</a>
+                            <ul th:each="Item : ${accessories}">
                                 <li th:text="${Item.getName()}">Accessorie</li>
 
-                            </ul></li>
-                            <li><a href="#">Outfit</a>
-                                <ul th:each="Item : ${outfit}">
-                                    <li th:text="${Item.getName()}">Outfit</li>
-                                </ul></li>
-                            <li><a href="#">Vehicle</a>
-                                <ul th:each="Item : ${vehicles}">
-                                    <li th:text="${Item.getName()}">Vehicle</li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Outfit</a>
+                            <ul th:each="Item : ${outfit}">
+                                <li th:text="${Item.getName()}">Outfit</li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Vehicle</a>
+                            <ul th:each="Item : ${vehicles}">
+                                <li th:text="${Item.getName()}">Vehicle</li>
 
-                                </ul>
-                            </li>
+                            </ul>
+                        </li>
 
-                        </ul>
-                    </div>
+                    </ul>
+                </div>
 
 
             </div>
