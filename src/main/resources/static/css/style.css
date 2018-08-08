@@ -91,14 +91,14 @@ header {
 .itemBox li {
 
     background: black;
-    width: 30%;
+    width: 28%;
     height: 100px;
     float: left;
     text-align: center;
     list-style: none;
     border: 1px solid black;
     border-radius: 3px;
-    margin: 5px;
+    margin: 3px;
 }
 
 /*Next challenge*/
@@ -121,7 +121,7 @@ header {
 }
 
 .items li {
-    width: 30%;
+    width: 28%;
     height: auto;
     float: left;
     text-align: center;
@@ -129,8 +129,8 @@ header {
     border: 1px solid white;
     box-shadow: 0 1px 0 rgba(255, 255, 255, .9) inset, 0 1px 3px rgba(0, 0, 0, .1);
     border-radius: 3px;
-    margin-left: 10px;
-    padding: 10px;
+    margin-left: 5px;
+    padding: 5px;
 }
 
 .items a {
