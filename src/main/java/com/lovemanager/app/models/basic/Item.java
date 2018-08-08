@@ -1,69 +1,36 @@
-package com.lovemanager.app.models;
+package com.lovemanager.app.models.basic;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "item")
 public class Item {
 
-    @Id
-    @Column(name = "id")
-    private int id;
 
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "picUrl")
-    private String password;
-
-    @Column(name = "type")
     private String type;
-
-    @Column(name = "level")
     private int level;
-
-    @Column(name = "bonus")
     private int bonus;
-
-    @Column(name = "statsType")
     private String statsType;
+    private String picUrl;
 
     public Item(){
 
     }
 
-    public Item(int id, String username, String password, String type, int level, int bonus, String statsType) {
-        this.id = id;
-        this.name = username;
-        this.password = password;
+    public Item(String name, String type, int level, int bonus, String statsType, String picUrl) {
+        this.name = name;
         this.type = type;
         this.level = level;
         this.bonus = bonus;
         this.statsType = statsType;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.picUrl = picUrl;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String username) {
-        this.name = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getType() {
@@ -96,6 +63,14 @@ public class Item {
 
     public void setStatsType(String statsType) {
         this.statsType = statsType;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 
     @Override

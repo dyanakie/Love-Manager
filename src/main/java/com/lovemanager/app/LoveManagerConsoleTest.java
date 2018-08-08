@@ -2,14 +2,12 @@ package com.lovemanager.app;
 
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.Character;
-import com.lovemanager.app.models.Item;
+import com.lovemanager.app.models.basic.Item;
 import com.lovemanager.app.models.User;
 import com.lovemanager.app.service.PasswordEncryption;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import java.util.List;
 
 public class LoveManagerConsoleTest {
 

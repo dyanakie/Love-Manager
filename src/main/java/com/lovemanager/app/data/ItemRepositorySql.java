@@ -1,8 +1,7 @@
 package com.lovemanager.app.data;
 
 import com.lovemanager.app.data.base.ItemRepository;
-import com.lovemanager.app.models.Active;
-import com.lovemanager.app.models.Item;
+import com.lovemanager.app.models.basic.Item;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@ package com.lovemanager.app.configuration;
 
 import com.lovemanager.app.models.Active;
 import com.lovemanager.app.models.Girl;
-import com.lovemanager.app.models.Item;
+import com.lovemanager.app.models.basic.Item;
 import com.lovemanager.app.models.User;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;

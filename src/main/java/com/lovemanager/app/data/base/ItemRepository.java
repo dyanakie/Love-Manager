@@ -1,6 +1,6 @@
 package com.lovemanager.app.data.base;
 
-import com.lovemanager.app.models.Item;
+import com.lovemanager.app.models.basic.Item;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.lovemanager.app.service.base;
 
-import com.lovemanager.app.models.Item;
+import com.lovemanager.app.models.basic.Item;
 
 import java.util.List;
 
@@ -13,4 +13,6 @@ public interface ItemService {
    List<Item> getAllVehicles(int level);
    List<Item> getAllOutfits(int level);
    List<Item> getAllAccessories(int level);
+
+   List<Item> getAllItems();
 }

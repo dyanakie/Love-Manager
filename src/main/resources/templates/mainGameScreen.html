@@ -28,9 +28,9 @@
                 <img src="pics/character.png" id="char">
                 <div class="itemBox">
                     <ul class="itemBox">
-                        <li><a href="#" id="accBox"></a></li>
-                        <li><a href="#" id="outfitBox"></a></li>
-                        <li><a href="#" id="vehicleBox"></a></li>
+                        <li><img th:src="@{${activeItem.getAccessorieUrl()}}"></li>
+                        <li><img th:src="@{${activeItem.getOutfitUrl()}}"></li>
+                        <li><img th:src="@{${activeItem.getVehicleUrl()}}"></li>
                     </ul>
 
                 </div>
@@ -41,28 +41,18 @@
                     <div id="items">
                         <h1>Choose Your Weapons</h1>
                         <ul class="items">
-                            <li><a href="#">Accessories</a>                                <ul>
-                                <li><a href="#">Glasses</a></li>
-                                <li><a href="#">Gold Chain</a></li>
-                                <li><a href="#">Sun Glasses</a></li>
-                                <li><a href="#">Watch</a></li>
-                                <li><a href="#">Gold Teeth</a></li>
+                                <li><a href="#">Accessories</a>                                <ul th:each="Item : ${accessories}">
+                                <li th:text="${Item.getName()}">Accessorie</li>
+
                             </ul></li>
                             <li><a href="#">Outfit</a>
-                                <ul>
-                                    <li><a href="#">Black Suit</a></li>
-                                    <li><a href="#">Casual Shirt</a></li>
-                                    <li><a href="#">T-Shirt</a></li>
-                                    <li><a href="#">Sweat Suit</a></li>
+                                <ul th:each="Item : ${outfit}">
+                                    <li th:text="${Item.getName()}">Outfit</li>
                                 </ul></li>
                             <li><a href="#">Vehicle</a>
-                                <ul>
-                                    <li><a href="#">Bicycle</a></li>
-                                    <li><a href="#">Classic Car</a></li>
-                                    <li><a href="#">Sports Car</a></li>
-                                    <li><a href="#">Crazy Car</a></li>
-                                    <li><a href="#">Limo</a></li>
-                                    <li><a href="#">Tractor</a></li>
+                                <ul th:each="Item : ${vehicles}">
+                                    <li th:text="${Item.getName()}">Vehicle</li>
+
                                 </ul>
                             </li>
 
