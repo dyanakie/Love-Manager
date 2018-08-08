@@ -1,7 +1,9 @@
 package com.lovemanager.app.service;
 
+import com.lovemanager.app.data.base.CharacterRepository;
 import com.lovemanager.app.models.basic.Item;
 import com.lovemanager.app.service.base.ItemService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,22 +14,52 @@ import java.util.stream.Collectors;
 @Service
 public class ItemServiceImpl implements ItemService {
 
-    @Override
-    public Item getCurrentOutfit(int level) {
+    private CharacterRepository characterRepository;
 
-       return null;
+    @Autowired
+    public ItemServiceImpl(CharacterRepository characterRepository){
+        this.characterRepository = characterRepository;
+    }
+
+    @Override
+    public String getCurrentOutfit(int characterId) {
+
+       return characterRepository.getCharacterById(characterId).getOutfit();
 
     }
 
     @Override
-    public Item getCurrentVehicle(int level) {
-        return null;
+    public String getCurrentVehicle(int characterId) {
+
+        return characterRepository.getCharacterById(characterId).getVehicle();
     }
 
     @Override
-    public Item getCurrentAccessorie(int level) {
-        return null;
+    public String getCurrentAccessorie(int characterId) {
+
+        return characterRepository.getCharacterById(characterId).getAccessories();
     }
+
+
+
+    @Override
+    public void changeCurrentOutfit(int characterId, String outfit) {
+        characterRepository.setOutfit(characterId, outfit);
+    }
+
+    @Override
+    public void changeCurrentVehicle(int characterId, String vehicle) {
+
+        characterRepository.setVehicle(characterId, vehicle);
+    }
+
+    @Override
+    public void changeCurrentAccessorie(int characterId,String accessorie) {
+
+        characterRepository.setAccessorie(characterId, accessorie);
+    }
+
+
 
     @Override
     public List<Item> getAllVehicles(int level) {

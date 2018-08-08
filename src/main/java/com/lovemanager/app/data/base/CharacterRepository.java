@@ -35,4 +35,5 @@ public interface CharacterRepository {
     void setAccessorie(int characterId, String accessorie);
 
     void setOutfit(int characterId, String outfit);
+
 }

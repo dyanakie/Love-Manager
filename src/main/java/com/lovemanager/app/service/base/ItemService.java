@@ -6,9 +6,13 @@ import java.util.List;
 
 public interface ItemService {
 
-   Item getCurrentOutfit(int level);
-   Item getCurrentVehicle(int level);
-   Item getCurrentAccessorie(int level);
+   String getCurrentOutfit(int characterId);
+   String getCurrentVehicle(int characterId);
+   String getCurrentAccessorie(int characterId);
+
+   void changeCurrentOutfit(int characterId, String outfit);
+   void changeCurrentVehicle(int characterId, String vehicle);
+   void changeCurrentAccessorie(int characterId, String accessorie);
 
    List<Item> getAllVehicles(int level);
    List<Item> getAllOutfits(int level);
