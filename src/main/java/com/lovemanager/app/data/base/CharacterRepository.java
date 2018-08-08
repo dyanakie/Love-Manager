@@ -29,4 +29,10 @@ public interface CharacterRepository {
     void changeStatus(int characterId, int amount);
 
     void changePhysique(int characterId, int amount);
+
+    void setVehicle(int characterId, String vehicle);
+
+    void setAccessorie(int characterId, String accessorie);
+
+    void setOutfit(int characterId, String outfit);
 }
