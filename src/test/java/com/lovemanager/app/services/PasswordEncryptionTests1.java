@@ -13,8 +13,9 @@ public class PasswordEncryptionTests1 {
     @InjectMocks
     PasswordEncryption passwordEncryption;
 
+
     @Test
-    public void Test_Encrypted_Message_Same_As_Decrypted(){
+    public void Test_Encrypted_Message_Same_As_Decrypted() {
 
         String test = passwordEncryption.encryptPassword("PAROLA RIBA MECH");
 
@@ -23,7 +24,7 @@ public class PasswordEncryptionTests1 {
     }
 
     @Test
-    public void Test_Encryption_Equals_Certain_String(){
+    public void Test_Encryption_Equals_Certain_String() {
 
         String test = passwordEncryption.encryptPassword("123");
 
@@ -31,6 +32,12 @@ public class PasswordEncryptionTests1 {
 
     }
 
+    @Test
+    public void Test_Decryption_Equals_String(){
 
+        String test = passwordEncryption.decryptPassword("022113$3");
+
+        Assert.assertEquals(test, "123");
+    }
 
 }
