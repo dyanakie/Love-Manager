@@ -12,7 +12,7 @@ It uses SQL database lovemanager.
 
 # Features
 
--User login/register
--Equip/Unequip Items
--Random girls
--Leveling up
++User login/register
++Equip/Unequip Items
++Random girls
++Leveling up
