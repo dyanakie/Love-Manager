@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 @Service
 public class GirlServiceImpl implements GirlService {
@@ -35,7 +37,8 @@ public class GirlServiceImpl implements GirlService {
     @Override
     public ArrayList<Girl> loadAllGirls(){
 
-        ArrayList<Girl> pool = new ArrayList<>();
+
+        List<Girl> pool = new LinkedList<>();
 
         pool.add(new Girl("/pics/girls/test.jpg", "You find Larra sitting in a coffee shop in the middle of the day.She is dressed gorgeously and seems to know she is attractive...", "Larra", "status", 0));
         pool.add(new Girl("/pics/girls/Eve.jpg", "You find Eve at a night club.She drops one of her drinks and you hurry to help her...", "Eve", "physique", 0));
@@ -46,7 +49,8 @@ public class GirlServiceImpl implements GirlService {
         pool.add(new Girl("/pics/girls/Kornelia.jpg", "You find Cornelia at a dating website for sex arrangement...", "Cornelia", "physique", 0));
         pool.add(new Girl("/pics/girls/Elizabeth.jpg", "You find Elizabeth at a business conference.She is a manager of a successful Real Estate company...", "Elizabeth", "status", 0));
         pool.add(new Girl("/pics/girls/Dezdemona.jpg", "You find Dezdemona reading a book in the park.You save her from a barking dog and start talking...", "Dezdemona", "intelligence", 0));
-        return pool;
+
+        return new ArrayList<Girl>(pool);
     }
 
     @Override
