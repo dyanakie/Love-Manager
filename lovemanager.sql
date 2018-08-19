@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `active` (
 -- Dumping data for table lovemanager.active: ~0 rows (approximately)
 /*!40000 ALTER TABLE `active` DISABLE KEYS */;
 INSERT INTO `active` (`id`, `activeId`, `name`, `characterId`) VALUES
-	(1, 0, 'drago', 53);
+	(1, 0, 'drago', 61);
 /*!40000 ALTER TABLE `active` ENABLE KEYS */;
 
 -- Dumping structure for table lovemanager.character
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `character` (
   `usedGirls` varchar(200) DEFAULT '""',
   PRIMARY KEY (`characterId`),
   KEY `FK_character_user` (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table lovemanager.character: ~0 rows (approximately)
 /*!40000 ALTER TABLE `character` DISABLE KEYS */;
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `girl` (
 -- Dumping data for table lovemanager.girl: ~0 rows (approximately)
 /*!40000 ALTER TABLE `girl` DISABLE KEYS */;
 INSERT INTO `girl` (`id`, `name`, `type`, `pic`, `presentation`, `level`) VALUES
-	(1, 'Eve', 'physique', '/pics/girls/Eve.jpg', 'You find Eve at a night club.She drops one of her drinks and you hurry to help her...', 5);
+	(1, 'Elizabeth', 'status', '/pics/girls/Elizabeth.jpg', 'You find Elizabeth at a business conference.She is a manager of a successful Real Estate company...', 2);
 /*!40000 ALTER TABLE `girl` ENABLE KEYS */;
 
 -- Dumping structure for table lovemanager.item
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table lovemanager.user: ~1 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `userName`, `password`, `characterId`) VALUES
-	(13, 'drago', '022113$3', 53);
+	(13, 'drago', '022113$3', 61);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
