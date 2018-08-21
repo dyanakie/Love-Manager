@@ -12,7 +12,11 @@ It uses SQL database lovemanager.
 
 # Features
 
-+User login/register
-+Equip/Unequip Items
-+Random girls
-+Leveling up
+- User login/register
+- Equip/Unequip Items
+- Random girls
+- Leveling up
+
+#Install Instructions
+
+Just clone the repo.You can find the database lovemanager.sql with the build code.Just paste it and build your DB.Play!
