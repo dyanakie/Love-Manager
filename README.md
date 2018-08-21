@@ -19,4 +19,6 @@ It uses SQL database lovemanager.
 
 # Install Instructions
 
-Just clone the repo.You can find the database lovemanager.sql with the build code.Just paste it and build your DB.Play!
+Just clone the repo.You can find the database lovemanager.sql with the build code.Just paste it and build your DB.
+
+Start from LoveManagerApplication and open your browser on http://localhost:8080/ Play!
