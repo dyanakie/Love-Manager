@@ -17,6 +17,6 @@ It uses SQL database lovemanager.
 - Random girls
 - Leveling up
 
-#Install Instructions
+# Install Instructions
 
 Just clone the repo.You can find the database lovemanager.sql with the build code.Just paste it and build your DB.Play!
